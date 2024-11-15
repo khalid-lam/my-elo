@@ -1,0 +1,4 @@
+            CHOSES A FAIRE
+- update les classement pour mettre des icones pour les trois premiers
+- commenter un peu plus le code
+- faire un peu de ménage dans les fichiers et dans la database afin de fournir une db potable

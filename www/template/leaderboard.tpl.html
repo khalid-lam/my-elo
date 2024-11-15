@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<body>
+    <select id="choose_leaderboard" class="form-select form-select-lg mb-3 d-flex justify-content-center"
+        aria-label="Large select example">
+        <option selected disabled>Choisis ton classement</option>
+        <option value="tennis">Tennis</option>
+        <option value="fifa">FIFA</option>
+    </select>
+
+    <table id="tennis_table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Classement</th>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Score</th>
+                <th scope="col">Victoire(s)</th>
+                <th scope="col">Défaite(s)</th>
+                <th scope="col">Nul(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#tennisUsers}}
+            <tr>
+                <td>{{rank}}</td>
+                <td>{{username}}</td>
+                <td>{{score}}</td>
+                <td>{{wins}}</td>
+                <td>{{losses}}</td>
+                <td>{{draws}}</td>
+            </tr>
+            {{/tennisUsers}}
+        </tbody>
+    </table>
+    <table id="FIFA_table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Classement</th>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Score</th>
+                <th scope="col">Victoire(s)</th>
+                <th scope="col">Défaite(s)</th>
+                <th scope="col">Nul(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#fifaUsers}}
+            <tr>
+                <td>{{rank}}</td>
+                <td>{{username}}</td>
+                <td>{{score}}</td>
+                <td>{{wins}}</td>
+                <td>{{losses}}</td>
+                <td>{{draws}}</td>
+            </tr>
+            {{/fifaUsers}}
+        </tbody>
+    </table>
+</body>
+
+</html>

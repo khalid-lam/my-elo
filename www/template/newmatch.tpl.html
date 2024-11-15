@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<body>
+    <select id="game" class="form-select form-select-lg mb-3 d-flex justify-content-center"
+        aria-label="Large select example">
+        <option selected disabled>Choix du jeu</option>
+        <option value="Tennis">Tennis</option>
+        <option value="FIFA">FIFA</option>
+    </select>
+
+    <form id="tennis-form" class="needs-validation">
+        <div class="form-check d-flex justify-content-center mb-2">
+            <input class="form-check-input" type="radio" name="result" id="exampleRadios1" value="win" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                J'ai gagné
+            </label>
+        </div>
+        <div class="form-check d-flex justify-content-center mb-2">
+            <input class="form-check-input" type="radio" name="result" id="exampleRadios2" value="draw">
+            <label class="form-check-label" for="exampleRadios2">
+                J'ai fait match nul
+            </label>
+        </div>
+        <div class="form-check d-flex justify-content-center mb-5">
+            <input class="form-check-input" type="radio" name="result" id="exampleRadios2" value="loss">
+            <label class="form-check-label" for="exampleRadios2">
+                J'ai perdu
+            </label>
+        </div>
+        <div class="form-row">
+            <select class="form-select form-select-sm" aria-label="Small select example" name="opponent-id">
+                <option selected disabled>Choix de l'adversaire</option>
+                {{#opponents}}
+                <option value="{{username}}">{{username}}</option>
+                {{/opponents}}
+            </select>
+        </div>
+        <div class="form-row">
+            <div class="row d-flex justify-content-center mb-2">
+                <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 1</label>
+                <div class="col-auto d-flex justify-content-center align-items-end">
+                    <div class="text-center mr-2">
+                        <small><label class="d-block" style="color: gray;">Vainqueur</label></small>
+                        <input type="text" class="form-control" name="set1-winner" style="width: 100px;" required>
+                    </div>
+                    <span style="margin: 0 10px; align-self: center;">-</span>
+                    <div class="text-center">
+                        <small><label class="d-block" style="color: gray;">Perdant</label></small>
+                        <input type="text" class="form-control" name="set1-loser" style="width: 100px;" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mb-2">
+                <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 2</label>
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="set2-winner"
+                        style="width: 100px; display: inline-block;" required>
+                    <span style="margin: 0 5px;">-</span>
+                    <input type="text" class="form-control" name="set2-loser"
+                        style="width: 100px; display: inline-block;" required>
+                </div>
+            </div>
+
+            <div class="form-check d-flex justify-content-center mb-2">
+                <input class="form-check-input" name="set3" type="checkbox" value="yes" id="isThirdSet">
+                <label class="form-check-label" for="defaultCheck1">
+                    Un troisième set ?
+                </label>
+            </div>
+
+            <div id="set-3" class="row d-flex justify-content-center mb-2" style="display: none !important;">
+                <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 3</label>
+                <div class="col-auto d-flex justify-content-center">
+                    <input id="score-set3-winner" type="text" class="form-control" name="set3-winner"
+                        style="width: 100px; display: inline-block;">
+                    <span style="margin: 0 5px;">-</span>
+                    <input id="score-set3-loser" type="text" class="form-control" name="set3-loser"
+                        style="width: 100px; display: inline-block;">
+                </div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input id="date-input-tennis" type="date" class="form-control" name="date" required>
+            <label for="floatingInput">Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="time" class="form-control" name="time" value="12:00" required>
+            <label for="floatingInput">Heure</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="comments" style="height: 100px">
+            <label for="floatingInput">Commentaires (visibles par tous)</label>
+        </div>
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col text-center">
+                    <img id="myImageTennis" style="width: auto; max-height: 50vh">
+                </div>
+            </div>
+
+            <div class="row pt-4 justify-content-center">
+                <div class="col-4 text-end pe-5">
+                    <button type="button" class="btn btn-secondary" onclick="openCamera('camera', 'fifa')">Prendre une
+                        photo de votre match</button>
+                </div>
+                <div class="col-4 text-start ps-5">
+                    <button type="button" class="btn btn-secondary" onclick="openCamera('album', 'fifa')">Utiliser une
+                        photo de sa galerie</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary"> Valider le match</button>
+        </div>
+    </form>
+
+    <form id="fifa-form">
+        <div class="form-check d-flex justify-content-center mb-2">
+            <input class="form-check-input" type="radio" name="result" value="win" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                J'ai gagné
+            </label>
+        </div>
+        <div class="form-check d-flex justify-content-center mb-2">
+            <input class="form-check-input" type="radio" name="result" value="draw">
+            <label class="form-check-label" for="exampleRadios2">
+                J'ai fait match nul
+            </label>
+        </div>
+        <div class="form-check d-flex justify-content-center mb-5">
+            <input class="form-check-input" type="radio" name="result" value="loss">
+            <label class="form-check-label" for="exampleRadios2">
+                J'ai perdu
+            </label>
+        </div>
+        <div class="form-row">
+            <select class="form-select form-select-sm" aria-label="Small select example" name="opponent-id">
+                <option selected disabled>Choix de l'adversaire</option>
+                {{#opponents}}
+                <option value="{{username}}">{{username}}</option>
+                {{/opponents}}
+            </select>
+        </div>
+        <div class="row d-flex justify-content-center mb-2">
+            <label for="formGroupExampleInput" class="col-12 text-center mb-2">Score</label>
+            <div class="col-auto d-flex justify-content-center align-items-end">
+                <div class="text-center mr-2">
+                    <small><label class="d-block" style="color: gray;">Vainqueur</label></small>
+                    <input type="text" class="form-control" name="winner-score" style="width: 100px;" required>
+                </div>
+                <span style="margin: 0 10px; align-self: center;">-</span>
+                <div class="text-center">
+                    <small><label class="d-block" style="color: gray;">Perdant</label></small>
+                    <input type="text" class="form-control" name="loser-score" style="width: 100px;" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input id="date-input-fifa" type="date" class="form-control" name="date" required>
+            <label for="floatingInput">Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="time" class="form-control" name="time" value="12:00" required>
+            <label for="floatingInput">Heure</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="comments" style="height: 100px">
+            <label for="floatingInput">Commentaires (visibles par tous)</label>
+        </div>
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col text-center">
+                    <img id="myImageFIFA" style="width: auto; max-height: 50vh">
+                </div>
+            </div>
+
+            <div class="row pt-4 justify-content-center">
+                <div class="col-4 text-end pe-5">
+                    <button type="button" class="btn btn-secondary" onclick="openCamera('camera', 'fifa')">Prendre une
+                        photo de votre match</button>
+                </div>
+                <div class="col-4 text-start ps-5">
+                    <button type="button" class="btn btn-secondary" onclick="openCamera('album', 'fifa')">Utiliser une
+                        photo de sa galerie</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary"> Valider le match</button>
+        </div>
+    </form>
+
+    <div id="#modal-match" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-match-title" class="modal-title">{{ title }}</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-match-message">{{ message }}</p>
+                </div>
+                <div class="modal-GIF"></div>
+                <div class="modal-footer">
+                    <button id="bouton_newmatch_retour" type="button" class="btn btn-primary">
+                        <div id="bouton-retour-message">{{ retour }}</div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

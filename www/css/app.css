@@ -1,0 +1,348 @@
+.blue-bg {
+    background-color: #e3f2fd;
+}
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Navbar */
+  .navbar {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #3a4664;
+    border-bottom: 2px solid #ff5733; /* Bordure rouge tout en bas de la navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #ffffff; /* Couleur de texte blanc */
+    font-size: 25px;
+    font-weight: bold; /* Applique le texte en gras */
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+  
+  .navbar a:hover {
+    color: #ff5733; /* Orange clair au survol */
+    text-decoration: none;
+    padding-bottom: 2px;
+  }
+  
+  .navbar .brand {
+    font-weight: bold;
+    font-size: 22px;
+    color: #ffffff; /* Couleur de texte du titre */
+  }
+  
+  .navbar .brand:hover {
+    color: #ff5733; /* Change la couleur du titre au survol */
+  }
+  
+  /* Links Container */
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav-links a {
+      margin-right: 0;
+    }
+  }
+  /* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Style for the list group */
+  .list-group {
+    max-width: 400px; /* Largeur maximum */
+    margin: 20px auto;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  /* Style for each list item */
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f7f7f7;
+    transform: scale(1.02); /* Effet de zoom au survol */
+  }
+  
+  /* Style for icons */
+  .menu-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Style for hover effect on icons */
+  .list-group-item:hover .menu-icon {
+    transform: translateX(5px); /* Petit décalage pour effet visuel */
+  }
+  
+  /* Title style */
+  .list-group-item h5 {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  /* Small text (subtitles) */
+  .text-muted {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .list-group {
+      width: 100%; /* Occupe toute la largeur sur petits écrans */
+    }
+  }
+  /* Login Form Styles */
+.login-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input Group */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group-text {
+    background-color: #e3f2fd;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Input Fields */
+  .form-control {
+    border-radius: 0 8px 8px 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Button */
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Icon Style */
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect for icon */
+  .input-group-text:hover .menu-icon {
+    transform: translateX(5px); /* Little movement effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-form {
+      width: 90%;
+    }
+  }
+  .details-row-content {
+    transition: max-height 0.3s ease-out; /* Smooth sliding effect */
+    overflow: hidden; /* Prevent content from overflowing */
+    max-height: 0; /* Initially hidden */
+}
+/* Style for the arrow icon */
+.accordion-arrow {
+  font-size: 20px; /* Arrow size */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth rotation */
+  margin-left: 10px; /* Space between score and arrow */
+  float: right; /* Position the arrow at the end of the row */
+}
+
+.accordion-arrow.up {
+  transform: rotate(180deg); /* Rotate to point up */
+}
+
+.accordion-arrow.down {
+  transform: rotate(0deg); /* Arrow points down */
+}
+
+/* Ensure the arrow stays at the right end of the row */
+.score-cell {
+  position: relative;
+  padding-right: 30px; /* Make space for the arrow */
+}
+
+/* Common table styling for both tables */
+#tennis_table, #FIFA_table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto; /* Center the tables */
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Table Header Styling for both tables */
+#tennis_table thead, #FIFA_table thead {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+#tennis_table th, #FIFA_table th {
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Table Body Styling for both tables */
+#tennis_table tbody, #FIFA_table tbody {
+  text-align: center;
+}
+
+#tennis_table tr:nth-child(odd), #FIFA_table tr:nth-child(odd) {
+  background-color: #f8f9fa; /* Light gray background for odd rows */
+}
+
+#tennis_table tr:nth-child(even), #FIFA_table tr:nth-child(even) {
+  background-color: #ffffff; /* White background for even rows */
+}
+
+#tennis_table tr:hover, #FIFA_table tr:hover {
+  background-color: #e9f7ff; /* Hover effect on rows */
+  cursor: pointer;
+}
+
+/* Styling for individual cells in both tables */
+#tennis_table td, #FIFA_table td {
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+#tennis_table td:first-child, #FIFA_table td:first-child {
+  font-weight: bold;
+  color: #000000;
+}
+
+#tennis_table td:nth-child(2), #FIFA_table td:nth-child(2), 
+#tennis_table td:nth-child(3), #FIFA_table td:nth-child(3), 
+#tennis_table td:nth-child(4), #FIFA_table td:nth-child(4), 
+#tennis_table td:nth-child(5), #FIFA_table td:nth-child(5), 
+#tennis_table td:nth-child(6), #FIFA_table td:nth-child(6) {
+  font-weight: normal;
+}
+
+/* Styling for wins, losses, and draws in both tables */
+#tennis_table td:nth-child(4), #FIFA_table td:nth-child(4) {
+  color: #28a745; /* Green for wins */
+  font-weight: bold;
+}
+
+#tennis_table td:nth-child(5), #FIFA_table td:nth-child(5) {
+  color: #dc3545; /* Red for losses */
+  font-weight: bold;
+}
+
+#tennis_table td:nth-child(6), #FIFA_table td:nth-child(6) {
+  color: #ffc107; /* Yellow for draws */
+  font-weight: bold;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  #choose_leaderboard {
+    width: 80%;
+  }
+
+  #tennis_table, #FIFA_table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  #tennis_table th, #FIFA_table th, #tennis_table td, #FIFA_table td {
+    padding: 10px;
+  }
+}
+
+.modal-GIF {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100%;           /* Ensures full height in its container */
+  width: 100%;            /* Ensures full width */
+  padding: 20px;          /* Optional: adds space around the GIF */
+}
+
+.modal-GIF img {
+  max-width: 350px; /* Keeps GIF responsive */
+  height: auto;    /* Maintains aspect ratio */
+}
