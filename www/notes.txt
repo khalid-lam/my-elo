@@ -1,4 +1,5 @@
             CHOSES A FAIRE
-- update les classement pour mettre des icones pour les trois premiers
+- ajouter dans mes résultats une catégorie Mes informations et mon elo
+- le LateX ne s'affiche pas sur télephone
 - commenter un peu plus le code
 - faire un peu de ménage dans les fichiers et dans la database afin de fournir une db potable

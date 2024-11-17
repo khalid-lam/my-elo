@@ -1,0 +1,4 @@
+            CHOSES A FAIRE
+- ajouter dans mes résultats une catégorie Mes informations et mon elo
+- commenter un peu plus le code
+- faire un peu de ménage dans les fichiers et dans la database afin de fournir une db potable

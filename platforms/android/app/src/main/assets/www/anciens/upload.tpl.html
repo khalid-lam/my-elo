@@ -1,0 +1,28 @@
+<div class="container">
+    <!-- Réceptacle de l'image que nous allons prendre avec l'appareil photo-->
+    <div class="row pt-4">
+        <div class="col text-center">
+            <img id="myImage" class="img-fluid" style="width: auto; max-height: 70vh">
+        </div>
+    </div>
+
+    <!-- Les boutons d'action -->
+    <div class="row pt-4">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary" onclick="openCamera('camera')">Prendre une photo</button>
+        </div>
+    </div>
+
+    <div class="row pt-4">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary" onclick="openCamera('album')">Utiliser une photo de sa
+                galerie</button>
+        </div>
+    </div>
+
+    <div class="row pt-4">
+        <div class="col text-center">
+            <button type="button" class="btn btn-success" onclick="uploadImg()">Uploader la photo</button>
+        </div>
+    </div>
+</div>
