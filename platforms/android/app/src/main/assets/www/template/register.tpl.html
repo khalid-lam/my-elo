@@ -6,118 +6,126 @@
 
 <section class="background-radial-gradient overflow-hidden">
     <style>
-      .background-radial-gradient {
-        background-color: hsl(218, 41%, 15%);
-        background-image: radial-gradient(650px circle at 0% 0%,
-            hsl(218, 41%, 35%) 15%,
-            hsl(218, 41%, 30%) 35%,
-            hsl(218, 41%, 20%) 75%,
-            hsl(218, 41%, 19%) 80%,
-            transparent 100%),
-          radial-gradient(1250px circle at 100% 100%,
-            hsl(218, 41%, 45%) 15%,
-            hsl(218, 41%, 30%) 35%,
-            hsl(218, 41%, 20%) 75%,
-            hsl(218, 41%, 19%) 80%,
-            transparent 100%);
-      }
-  
-      .bg-glass {
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
-        backdrop-filter: saturate(200%) blur(25px);
-      }
+        /* Styles CSS récupérés pour le formulaire d'inscription*/
+        .background-radial-gradient {
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                    hsl(218, 41%, 35%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                    hsl(218, 41%, 45%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%);
+        }
 
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
     </style>
-  
-    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-      <div class="row gx-lg-5 align-items-center mb-5">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-            Bienvenue <br />
-            <span style="color: hsl(218, 81%, 75%)">Rejoignez-nous aujourd'hui</span>
-          </h1>
-          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-            Créez un compte et défiez les joueurs de la communauté.
-          </p>
-        </div>
-  
-        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-          <div class="card bg-glass">
-            <div class="card-body px-4 py-5 px-md-5">
-              <form>
-                <!-- Identifiant -->
-                <div class="form-outline mb-4">
-                  <input id="register_login" type="text" class="form-control" />
-                  <label class="form-label" for="register_login">Identifiant</label>
-                </div>
-  
-                <!-- Mot de passe -->
-                <div class="form-outline mb-4">
-                  <input id="register_password" type="password" class="form-control" />
-                  <label class="form-label" for="register_password">Mot de passe</label>
-                </div>
-  
-                <!-- Confirmation du mot de passe -->
-                <div class="form-outline mb-4">
-                  <input id="register_confirmed_password" type="password" class="form-control" />
-                  <label class="form-label" for="register_confirmed_password">Confirmation du mot de passe</label>
-                </div>
-  
-                <div class="row">
-                    <!-- Nom -->
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <input id="register_last_name" type="text" class="form-control" />
-                        <label class="form-label" for="register_last_name">Nom</label>
-                      </div>
-                    </div>
-                  
-                    <!-- Prénom -->
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <input id="register_first_name" type="text" class="form-control" />
-                        <label class="form-label" for="register_first_name">Prénom</label>
-                      </div>
-                    </div>
-                  </div>
-                  
-  
-                <!-- Email -->
-                <div class="form-outline mb-4">
-                  <input id="register_email" type="text" class="form-control" />
-                  <label class="form-label" for="register_email">Email</label>
-                </div>
-  
-                <!-- Submit button -->
-                <button id="register_button" type="button" class="submit-btn">
-                  S'inscrire
-                </button>
-  
-                <p class="mt-3">Vous avez déjà un compte ? <a href="#login">Se connecter</a></p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
 
-    <div id="#modal-register" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="modal-register-title" class="modal-title">{{ title }}</h5>
-                </div>
-                <div class="modal-body">
-                    <p id="modal-register-message">{{ message }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button id="bouton_retour" type="button" class="submit-btn"><div id="bouton-retour-message">Retour à l'accueil</div></button>
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    Bienvenue <br />
+                    <span style="color: hsl(218, 81%, 75%)">Rejoignez-nous aujourd'hui</span>
+                </h1>
+                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                    Créez un compte et défiez les joueurs de la communauté.
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <!-- Formulaire d'inscription -->
+                        <form>
+                            <!-- Identifiant -->
+                            <div class="form-outline mb-4">
+                                <input id="register_login" type="text" class="form-control" />
+                                <label class="form-label" for="register_login">Identifiant</label>
+                            </div>
+
+                            <!-- Mot de passe -->
+                            <div class="form-outline mb-4">
+                                <input id="register_password" type="password" class="form-control" />
+                                <label class="form-label" for="register_password">Mot de passe</label>
+                            </div>
+
+                            <!-- Confirmation du mot de passe -->
+                            <div class="form-outline mb-4">
+                                <input id="register_confirmed_password" type="password" class="form-control" />
+                                <label class="form-label" for="register_confirmed_password">Confirmation du mot de
+                                    passe</label>
+                            </div>
+
+                            <div class="row">
+                                <!-- Nom -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input id="register_last_name" type="text" class="form-control" />
+                                        <label class="form-label" for="register_last_name">Nom</label>
+                                    </div>
+                                </div>
+
+                                <!-- Prénom -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input id="register_first_name" type="text" class="form-control" />
+                                        <label class="form-label" for="register_first_name">Prénom</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Email -->
+                            <div class="form-outline mb-4">
+                                <input id="register_email" type="text" class="form-control" />
+                                <label class="form-label" for="register_email">Email</label>
+                            </div>
+
+                            <!-- Bouton de validation du formulaire -->
+                            <button id="register_button" type="button" class="submit-btn">
+                                S'inscrire
+                            </button>
+
+                            <!-- Lien direct vers le formulaire de connexion -->
+                            <p class="mt-3">Vous avez déjà un compte ? <a href="#login">Se connecter</a></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- Modal Bootstrap pour le retour utilisateur après la tentative d'inscription -->
+<div id="#modal-register" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-register-title" class="modal-title">{{ title }}</h5>
+            </div>
+            <div class="modal-body">
+                <p id="modal-register-message">{{ message }}</p>
+            </div>
+            <div class="modal-GIF">
+                <!-- Le GIF s'affichera ici-->
+            </div>
+            <div class="modal-footer">
+                <button id="bouton_retour" type="button" class="submit-btn">
+                    <div id="bouton-retour-message">Retour à l'accueil</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </body>

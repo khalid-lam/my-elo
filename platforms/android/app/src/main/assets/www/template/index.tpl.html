@@ -2,68 +2,75 @@
 <html lang="fr">
 
 <body id="index-page">
-    <style>body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        height: 100vh;
-        background-color: hsl(218, 41%, 15%);
-        background-image: radial-gradient(650px circle at 0% 0%,
-                hsl(218, 41%, 35%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%),
-            radial-gradient(1250px circle at 100% 100%,
-                hsl(218, 41%, 45%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%);
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                    hsl(218, 41%, 35%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                    hsl(218, 41%, 45%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
 
-        color: white; /* Couleur du texte en blanc */
-        padding: 0;
-    }
+            color: white;
+            padding: 0;
+        }
 
-    /* Optionnel : Ajout d'un effet de fond verre pour certains éléments */
-    .bg-glass {
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
-        backdrop-filter: saturate(200%) blur(25px);
-    }
-</style>
-<div class="icon-buttons mt-5">
-    <a href="index.html#login" class="icon-button">
-        <img src="svg/key.svg" class="icon-img" alt="Se connecter">
-        <span class="icon-text">Se connecter</span>
-    </a>
-    <a href="index.html#register" class="icon-button">
-        <img src="svg/page-edit.svg" class="icon-img" alt="S'inscrire">
-        <span class="icon-text">S'inscrire</span>
-    </a>
-    <a href="index.html#allresults" class="icon-button">
-        <img src="svg/page-search.svg" class="icon-img" alt="Les derniers résultats">
-        <span class="icon-text">Les derniers résultats</span>
-        <small class="text-muted">de tous les joueurs</small>
-    </a>
-    <a href="index.html#leaderboard" class="icon-button">
-        <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
-        <span class="icon-text">Classement général</span>
-    </a>
-    <a href="index.html#about" class="icon-button">
-        <img src="svg/help-circle.svg" class="icon-img" alt="À propos">
-        <span class="icon-text">À propos</span>
-        <small class="text-muted">Notre histoire</small>
-    </a>
-</div>
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
+    </style>
+    <div class="icon-buttons mt-5">
+        <!-- Icone "Se connecter" -->
+        <a href="index.html#login" class="icon-button">
+            <img src="svg/key.svg" class="icon-img" alt="Se connecter">
+            <span class="icon-text">Se connecter</span>
+        </a>
+        <!-- Icone "S'inscrire" -->
+        <a href="index.html#register" class="icon-button">
+            <img src="svg/page-edit.svg" class="icon-img" alt="S'inscrire">
+            <span class="icon-text">S'inscrire</span>
+        </a>
+        <!-- Icone "Les derniers résultats" -->
+        <a href="index.html#allresults" class="icon-button">
+            <img src="svg/page-search.svg" class="icon-img" alt="Les derniers résultats">
+            <span class="icon-text">Les derniers résultats</span>
+            <small class="text-muted">de tous les joueurs</small>
+        </a>
+        <!-- Icone "Classement général" -->
+        <a href="index.html#leaderboard" class="icon-button">
+            <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
+            <span class="icon-text">Classement général</span>
+        </a>
+        <!-- Icone "A propos" -->
+        <a href="index.html#about" class="icon-button">
+            <img src="svg/help-circle.svg" class="icon-img" alt="À propos">
+            <span class="icon-text">À propos</span>
+            <small class="text-muted">Notre histoire</small>
+        </a>
+    </div>
 
-    
+
+    <!-- Modal Boostrap lorsque un utilisateur non connecté rejoint une page nécessait la connexion -->
     <div id="#modal-not-connected" class="modal" tabindex="-1" role="dialog" style="display: none !important;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modal-login-title" class="modal-title"style="color: black;">Vous ne pouvez pas accéder à cette page</h5>
+                    <h5 id="modal-login-title" class="modal-title" style="color: black;">Vous ne pouvez pas accéder à
+                        cette page</h5>
                 </div>
                 <div class="modal-body">
                     <p id="modal-not-connected-message" style="color: black;">Vous n'êtes pas connecté</p>

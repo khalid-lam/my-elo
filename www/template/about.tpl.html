@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline';">
+</head>
 
 <body id="about-page">
     <section class="background-radial-gradient overflow-hidden">
@@ -44,7 +47,7 @@
 
             <hr>
 
-
+            <!-- Sous-section : Calcul de l'elo -->
             <section id="elo-calcul">
                 <h2>Détails du Calcul d'Elo</h2>
                 <p>
@@ -52,7 +55,7 @@
                     s'appliquent à tous les jeux :
                 </p>
 
-
+                <!-- Sous-section : Paramètres communs -->
                 <h4>Paramètres communs</h4>
                 <ul>
                     <li><strong>Constante</strong> K = 30 : détermine l'impact d'un match sur le score Elo.</li>
@@ -69,6 +72,7 @@
 
                 <hr>
 
+                <!-- Sous-section : Tennis -->
                 <h3>Tennis</h3>
                 <ul>
                     Le résultat d'un match est basé sur le nombre de sets gagnés.

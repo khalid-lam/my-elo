@@ -29,41 +29,45 @@
             padding: 0;
         }
 
-        /*  Ajout d'un effet de fond verre pour certains éléments */
+        /*  Ajout d'un effet de fond de verre pour certains éléments */
         .bg-glass {
             background-color: hsla(0, 0%, 100%, 0.9) !important;
             backdrop-filter: saturate(200%) blur(25px);
         }
     </style>
+
+    <!-- Icones dans le menu -->
     <div class="icon-buttons mt-5">
+        <!-- Icone "saisir match" -->
         <a href="index.html#newmatch" class="icon-button">
             <img src="svg/plus-square.svg" class="icon-img" alt="Saisir match">
             <span class="icon-text">Saisir match</span>
         </a>
+        <!-- Icone "mes résultats" -->
         <a href="index.html#myresults" class="icon-button">
             <img src="svg/book.svg" class="icon-img" alt="Mes résultats">
             <span class="icon-text">Mes résultats</span>
             <small class="text-muted">Vos performances</small>
         </a>
+        <!-- Icone "Historique Global" -->
         <a href="index.html#allresults" class="icon-button">
             <img src="svg/page-search.svg" class="icon-img" alt="Historique Global">
             <span class="icon-text">Historique global</span>
             <small class="text-muted">Tous les joueurs</small>
         </a>
+        <!-- Icone "Classement Général" -->
         <a href="index.html#leaderboard" class="icon-button">
             <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
             <span class="icon-text">Classement général</span>
             <small class="text-muted">Meilleurs joueurs</small>
         </a>
-        <a href="index.html" id="logout-btn" class="icon-button">
+        <!-- Icone "Déconnexion" -->
+        <a id="logout-btn" class="icon-button">
             <img src="svg/lock.svg" class="icon-img" alt="Déconnexion">
             <span class="icon-text">Déconnexion</span>
             <small class="text-muted">Connecté en tant que {{login}}</small>
         </a>
     </div>
-
-
-
 </body>
 
 </html>

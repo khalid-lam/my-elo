@@ -3,41 +3,48 @@
 
 <body id="myresults-page">
     <div class="container">
-    <select id="game-myresults" class="form-select form-select-lg mb-3" aria-label="Large select example">
-        <option selected disabled>Choisis ton jeu</option>
-        <option value="Tennis">Tennis</option>
-        <option value="FIFA">FIFA</option>
-    </select>
+        <!-- Menu déroulant pour choisir le jeu -->
+        <select id="game-myresults" class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected disabled>Choisis ton jeu</option>
+            <option value="Tennis">Tennis</option>
+            <option value="FIFA">FIFA</option>
+        </select>
 
-    <div id="tennis-myresults" class="tennis-myresults">
-        <table class="table">
-            <thead>
-                <tr class="results-head">
-                    <th scope="col">Joueur 1</th>
-                    <th scope="col">Joueur 2</th>
-                    <th scope="col">Score</th>
-                </tr>
-            </thead>
-            <tbody id="match-rows-tennis">
-            </tbody>
+        <!-- Table pour le tennis -->
+        <div id="tennis-myresults" class="tennis-myresults">
+            <table class="table">
+                <thead>
+                    <!-- Nom des colonnes de la table -->
+                    <tr class="results-head">
+                        <th scope="col">Joueur 1</th>
+                        <th scope="col">Joueur 2</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="match-rows-tennis">
+                    <!-- Les lignes sont ajoutées dans app.js -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table pour FIFA -->
+        <div id="fifa-myresults" class="fifa-myresults">
+            <table class="table">
+                <thead>
+                    <!-- Nom des colonnes de la table -->
+                    <tr class="results-head">
+                        <th scope="col">Joueur 1</th>
+                        <th scope="col">Joueur 2</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="match-rows-fifa">
+                    <!-- Les lignes sont ajoutées dans app.js -->
+                </tbody>
+            </table>
+        </div>
         </table>
     </div>
-
-    <div id="fifa-myresults" class="fifa-myresults">
-        <table class="table">
-            <thead>
-                <tr class="results-head">
-                    <th scope="col">Joueur 1</th>
-                    <th scope="col">Joueur 2</th>
-                    <th scope="col">Score</th>
-                </tr>
-            </thead>
-            <tbody id="match-rows-fifa">
-            </tbody>
-        </table>
-    </div>
-    </table>
-</div>
 </body>
 
 </html>

@@ -2,114 +2,118 @@
 <html lang="fr">
 
 <body class="leaderboard-page">
-    <style>body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        height: 100vh;
-        background-color: hsl(218, 41%, 15%);
-        background-image: radial-gradient(650px circle at 0% 0%,
-                hsl(218, 41%, 35%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%),
-            radial-gradient(1250px circle at 100% 100%,
-                hsl(218, 41%, 45%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%);
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                    hsl(218, 41%, 35%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                    hsl(218, 41%, 45%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
 
-        color: white; /* Couleur du texte en blanc */
-        padding: 0;
-    }
+            color: white;
+            padding: 0;
+        }
 
-    /* Optionnel : Ajout d'un effet de fond verre pour certains éléments */
-    .bg-glass {
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
-        backdrop-filter: saturate(200%) blur(25px);
-    }
-</style>
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
+    </style>
     <div class="container">
-    <section class="background-radial-gradient overflow-hidden">
-    <select id="choose_leaderboard" class="form-select form-select-lg mb-3 d-flex justify-content-center"
-        aria-label="Large select example">
-        <option selected disabled>Choisis ton classement</option>
-        <option value="tennis">Tennis</option>
-        <option value="fifa">FIFA</option>
-    </select>
+        <section class="background-radial-gradient overflow-hidden">
+            <!-- Menu déroulant pour choisir le jeu -->
+            <select id="choose_leaderboard" class="form-select form-select-lg mb-3 d-flex justify-content-center"
+                aria-label="Large select example">
+                <option selected disabled>Choisis ton classement</option>
+                <option value="Tennis">Tennis</option>
+                <option value="FIFA">FIFA</option>
+            </select>
 
-    <table id="tennis_table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Classement</th>
-                <th scope="col">Identifiant</th>
-                <th scope="col">Score</th>
-                <th scope="col">Victoire(s)</th>
-                <th scope="col">Défaite(s)</th>
-                <th scope="col">Nul(s)</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#tennisUsers}}
-            <tr>
-                <td>{{{rank}}}</td>
-                <td>
-                    {{#isCurrentUser}}<b>{{username}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{username}}{{/isCurrentUser}}
-                </td>
-                <td>
-                    {{#isCurrentUser}}<b>{{score}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{score}}{{/isCurrentUser}}
-                </td>
-                <td> {{#isCurrentUser}}<b>{{wins}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{wins}}{{/isCurrentUser}}
-                </td>
-                <td> {{#isCurrentUser}}<b>{{losses}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{losses}}{{/isCurrentUser}}</td>
-                <td> {{#isCurrentUser}}<b>{{draws}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{draws}}{{/isCurrentUser}}</td>
-            </tr>
-            {{/tennisUsers}}
-        </tbody>
-    </table>
-    <table id="FIFA_table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Classement</th>
-                <th scope="col">Identifiant</th>
-                <th scope="col">Score</th>
-                <th scope="col">Victoire(s)</th>
-                <th scope="col">Défaite(s)</th>
-                <th scope="col">Nul(s)</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#fifaUsers}}
-            <tr>
-                <td>{{{rank}}}</td>
-                <td>
-                    {{#isCurrentUser}}<b>{{username}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{username}}{{/isCurrentUser}}
-                </td>
-                <td>
-                    {{#isCurrentUser}}<b>{{score}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{score}}{{/isCurrentUser}}
-                </td>
-                <td> {{#isCurrentUser}}<b>{{wins}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{wins}}{{/isCurrentUser}}
-                </td>
-                <td> {{#isCurrentUser}}<b>{{losses}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{losses}}{{/isCurrentUser}}</td>
-                <td> {{#isCurrentUser}}<b>{{draws}}</b>{{/isCurrentUser}}
-                    {{^isCurrentUser}}{{draws}}{{/isCurrentUser}}</td>
-            </tr>
-            {{/fifaUsers}}
-        </tbody>
-    </table>
+            <!-- Classement pour le tennis -->
+            <table id="tennis_table" class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Classement</th>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Victoire(s)</th>
+                        <th scope="col">Défaite(s)</th>
+                        <th scope="col">Nul(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#tennisUsers}}
+                    <tr>
+                        <td>{{{rank}}}</td>
+                        <td><!-- Met le username en gras lorsque celui-ci est l'utilisateur connecté --->
+                            {{#isCurrentUser}}<b>{{username}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{username}}{{/isCurrentUser}}
+                        </td>
+                        <td>
+                            {{#isCurrentUser}}<b>{{score}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{score}}{{/isCurrentUser}}
+                        </td>
+                        <td> {{#isCurrentUser}}<b>{{wins}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{wins}}{{/isCurrentUser}}
+                        </td>
+                        <td> {{#isCurrentUser}}<b>{{losses}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{losses}}{{/isCurrentUser}}</td>
+                        <td> {{#isCurrentUser}}<b>{{draws}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{draws}}{{/isCurrentUser}}</td>
+                    </tr>
+                    {{/tennisUsers}}
+                </tbody>
+            </table>
+
+            <!-- Classement pour FIFA -->
+            <table id="FIFA_table" class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Classement</th>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Victoire(s)</th>
+                        <th scope="col">Défaite(s)</th>
+                        <th scope="col">Nul(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#fifaUsers}}
+                    <tr>
+                        <td>{{{rank}}}</td>
+                        <td>
+                            {{#isCurrentUser}}<b>{{username}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{username}}{{/isCurrentUser}}
+                        </td>
+                        <td>
+                            {{#isCurrentUser}}<b>{{score}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{score}}{{/isCurrentUser}}
+                        </td>
+                        <td> {{#isCurrentUser}}<b>{{wins}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{wins}}{{/isCurrentUser}}
+                        </td>
+                        <td> {{#isCurrentUser}}<b>{{losses}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{losses}}{{/isCurrentUser}}</td>
+                        <td> {{#isCurrentUser}}<b>{{draws}}</b>{{/isCurrentUser}}
+                            {{^isCurrentUser}}{{draws}}{{/isCurrentUser}}</td>
+                    </tr>
+                    {{/fifaUsers}}
+                </tbody>
+            </table>
     </div>
 </body>
 

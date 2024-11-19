@@ -5,7 +5,8 @@
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="index.html"/>
+    <access origin="https://cdnjs.cloudflare.com" /> <!-- Autorise uniquement cdnjs -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 

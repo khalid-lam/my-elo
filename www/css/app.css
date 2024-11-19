@@ -5,9 +5,6 @@
   backdrop-filter: saturate(200%) blur(25px);
 }
 
-
-
-
 .bg-glass {
   background-color: hsla(0, 0%, 100%, 0.8) !important;
   /* Less opaque */
@@ -35,6 +32,10 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   /* Smooth edges */
+}
+.logo-right {
+  height: 40px; /* Ajustez la taille du logo */
+  width: auto;
 }
 
 /* Navbar links */

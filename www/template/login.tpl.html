@@ -4,6 +4,7 @@
 <body>
     <section class="text-center text-lg-start">
         <style>
+            /* Styles CSS récupérés pour le template de login */
             body {
                 margin: 0;
                 font-family: 'Roboto', sans-serif;
@@ -51,37 +52,47 @@
         <div class="card mb-3">
             <div class="row g-0 d-flex align-items-center">
                 <div class="col-lg-4 d-none d-lg-flex">
-                    <img src="img/logo_myelo.png" alt="Login Image"
+                    <img src="img/logo-myelo.png" alt="Login Image"
                         class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
                 </div>
                 <div class="col-lg-8">
                     <div class="card-body py-5 px-md-5">
 
+                        <!-- Formulaire pour la connexion -->
                         <form>
+
+                            <!-- Identifiant -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="log_login" class="form-control" />
                                 <label class="form-label" for="log_login">Identifiant</label>
                             </div>
 
+                            <!-- Mot de passe -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="log_password" class="form-control" />
                                 <label class="form-label" for="log_password">Mot de passe</label>
                             </div>
 
+                            <!-- Bouton de validation du formulaire -->
                             <div class="row mb-4">
                                 <div class="col d-flex justify-content-center">
 
                                     <button type="button" class="submit-btn mb-4" id="login_button">Se
-                                        connecter</button>
+                                        connecter
+                                    </button>
+                                </div>
+                            </div>
 
                         </form>
                     </div>
                 </div>
+                <!-- Lien direct vers le formulaire d'inscription -->
                 <p>Pas de compte ? <a href="#register">S'inscrire ici</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Modal Bootstrap pour le retour utilisateur après la tentative de connexion -->
     <div id="#modal-login" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -90,6 +101,9 @@
                 </div>
                 <div class="modal-body">
                     <p id="modal-login-message">{{ message }}</p>
+                </div>
+                <div class="modal-GIF">
+                    <!-- Le GIF s'affichera ici-->
                 </div>
                 <div class="modal-footer">
                     <button id="bouton_retour" type="button" class="submit-btn">{{ message }}</button>

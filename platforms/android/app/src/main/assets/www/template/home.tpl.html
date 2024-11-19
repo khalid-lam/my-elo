@@ -3,66 +3,71 @@
 
 
 <body id="home-page">
-    <style>body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        height: 100vh;
-        background-color: hsl(218, 41%, 15%);
-        background-image: radial-gradient(650px circle at 0% 0%,
-                hsl(218, 41%, 35%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%),
-            radial-gradient(1250px circle at 100% 100%,
-                hsl(218, 41%, 45%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%);
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                    hsl(218, 41%, 35%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                    hsl(218, 41%, 45%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
 
-        color: white; /* Couleur du texte en blanc */
-        padding: 0;
-    }
+            color: white;
+            padding: 0;
+        }
 
-    /* Optionnel : Ajout d'un effet de fond verre pour certains éléments */
-    .bg-glass {
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
-        backdrop-filter: saturate(200%) blur(25px);
-    }
-</style>
-<div class="icon-buttons mt-5">
-    <a href="index.html#newmatch" class="icon-button">
-        <img src="svg/plus-square.svg" class="icon-img" alt="Saisir match">
-        <span class="icon-text">Saisir match</span>
-    </a>
-    <a href="index.html#myresults" class="icon-button">
-        <img src="svg/book.svg" class="icon-img" alt="Mes résultats">
-        <span class="icon-text">Mes résultats</span>
-        <small class="text-muted">Vos performances</small>
-    </a>
-    <a href="index.html#allresults" class="icon-button">
-        <img src="svg/page-search.svg" class="icon-img" alt="Historique Global">
-        <span class="icon-text">Historique global</span>
-        <small class="text-muted">Tous les joueurs</small>
-    </a>
-    <a href="index.html#leaderboard" class="icon-button">
-        <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
-        <span class="icon-text">Classement général</span>
-        <small class="text-muted">Meilleurs joueurs</small>
-    </a>
-    <a href="index.html" id="logout-btn" class="icon-button">
-        <img src="svg/lock.svg" class="icon-img" alt="Déconnexion">
-        <span class="icon-text">Déconnexion</span>
-        <small class="text-muted">Connecté en tant que {{login}}</small>
-    </a>
-</div>
+        /*  Ajout d'un effet de fond de verre pour certains éléments */
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
+    </style>
 
-
-
+    <!-- Icones dans le menu -->
+    <div class="icon-buttons mt-5">
+        <!-- Icone "saisir match" -->
+        <a href="index.html#newmatch" class="icon-button">
+            <img src="svg/plus-square.svg" class="icon-img" alt="Saisir match">
+            <span class="icon-text">Saisir match</span>
+        </a>
+        <!-- Icone "mes résultats" -->
+        <a href="index.html#myresults" class="icon-button">
+            <img src="svg/book.svg" class="icon-img" alt="Mes résultats">
+            <span class="icon-text">Mes résultats</span>
+            <small class="text-muted">Vos performances</small>
+        </a>
+        <!-- Icone "Historique Global" -->
+        <a href="index.html#allresults" class="icon-button">
+            <img src="svg/page-search.svg" class="icon-img" alt="Historique Global">
+            <span class="icon-text">Historique global</span>
+            <small class="text-muted">Tous les joueurs</small>
+        </a>
+        <!-- Icone "Classement Général" -->
+        <a href="index.html#leaderboard" class="icon-button">
+            <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
+            <span class="icon-text">Classement général</span>
+            <small class="text-muted">Meilleurs joueurs</small>
+        </a>
+        <!-- Icone "Déconnexion" -->
+        <a href="index.html" id="logout-btn" class="icon-button">
+            <img src="svg/lock.svg" class="icon-img" alt="Déconnexion">
+            <span class="icon-text">Déconnexion</span>
+            <small class="text-muted">Connecté en tant que {{login}}</small>
+        </a>
+    </div>
 </body>
 
 </html>

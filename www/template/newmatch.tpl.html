@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <body>
+    <!-- Menu déroulant pour choisir le jeu -->
     <select id="game" class="form-select form-select-lg mb-3 d-flex justify-content-center"
         aria-label="Large select example">
         <option selected disabled>Choix du jeu</option>
@@ -9,7 +10,10 @@
         <option value="FIFA">FIFA</option>
     </select>
 
+    <!-- Formulaire pour le tennis -->
     <form id="tennis-form" class="needs-validation">
+
+        <!-- Boutons pour désigner le vainqueur -->
         <div class="form-check d-flex justify-content-center mb-2">
             <input class="form-check-input" type="radio" name="result" id="exampleRadios1" value="win" checked>
             <label class="form-check-label" for="exampleRadios1">
@@ -28,6 +32,8 @@
                 J'ai perdu
             </label>
         </div>
+
+        <!-- Ménu déroulant pour choisir l'adversaire -->
         <div class="form-row">
             <select class="form-select form-select-sm" aria-label="Small select example" name="opponent-id">
                 <option selected disabled>Choix de l'adversaire</option>
@@ -36,7 +42,10 @@
                 {{/opponents}}
             </select>
         </div>
+
+        <!-- Zones pour saisir le score -->
         <div class="form-row">
+            <!-- Score du 1er set -->
             <div class="row d-flex justify-content-center mb-2">
                 <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 1</label>
                 <div class="col-auto d-flex justify-content-center align-items-end">
@@ -51,6 +60,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Score du 2ème set -->
             <div class="row d-flex justify-content-center mb-2">
                 <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 2</label>
                 <div class="col-auto">
@@ -62,6 +73,7 @@
                 </div>
             </div>
 
+            <!-- Affichage de la zone de saisie du score du 3e set -->
             <div class="form-check d-flex justify-content-center mb-2">
                 <input class="form-check-input" name="set3" type="checkbox" value="yes" id="isThirdSet">
                 <label class="form-check-label" for="defaultCheck1">
@@ -69,6 +81,7 @@
                 </label>
             </div>
 
+            <!-- Score du 3ème set -->
             <div id="set-3" class="row d-flex justify-content-center mb-2" style="display: none !important;">
                 <label for="formGroupExampleInput" class="col-12 text-center mb-2">Set 3</label>
                 <div class="col-auto d-flex justify-content-center">
@@ -80,18 +93,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Saisie de la date-->
         <div class="form-floating mb-3">
             <input id="date-input-tennis" type="date" class="form-control" name="date" required>
             <label for="floatingInput">Date</label>
         </div>
+
+        <!-- Sasie de l'heure -->
         <div class="form-floating mb-3">
-            <input type="time" class="form-control" name="time" value="12:00" required>
+            <input id="time-input-tennis" type="time" class="form-control" name="time" required>
             <label for="floatingInput">Heure</label>
         </div>
+
+        <!-- Saisie des commentaires -->
         <div class="form-floating mb-3">
             <input type="text" class="form-control" name="comments" style="height: 100px">
             <label for="floatingInput">Commentaires (visibles par tous)</label>
         </div>
+
+        <!-- Saisie d'une image -->
         <div class="container">
             <div class="row pt-4">
                 <div class="col text-center">
@@ -100,24 +121,37 @@
             </div>
 
             <div class="row pt-4 justify-content-center">
+                <!-- Prendre une photo -->
                 <div class="col-4 text-end pe-5">
-                    <button type="button" class="camera-btn" onclick="openCamera('camera', 'tennis')">Prendre une photo
-                        de votre match</button>
+                    <button type="button" class="camera-btn" onclick="openCamera('camera', 'tennis')">
+                        <img src="svg/device-camera.svg" class="icon-img"> 
+                        <br> Prendre une photo
+                    </button>
                 </div>
+                <!-- Choisir une photo dans la galerie -->
                 <div class="col-4 text-start ps-5">
-                    <button type="button" class="camera-btn" onclick="openCamera('album', 'tennis')">Utiliser une photo
-                        de sa galerie</button>
+                    <button type="button" class="camera-btn" onclick="openCamera('album', 'tennis')">
+                        <img src="svg/device-mobile.svg" class="icon-img"> 
+                        <br> Ouvrir la galerie
+                    </button>
                 </div>
             </div>
 
         </div>
 
+        <!-- Bouton de validation du formulaire -->
         <div class="d-flex justify-content-center mt-5">
             <button type="submit" class="submit-btn"> Valider le match</button>
         </div>
     </form>
 
+
+
+
+    <!-- Formulaire pour FIFA -->
     <form id="fifa-form">
+
+        <!-- Boutons pour désigner le vainqueur -->
         <div class="form-check d-flex justify-content-center mb-2">
             <input class="form-check-input" type="radio" name="result" value="win" checked>
             <label class="form-check-label" for="exampleRadios1">
@@ -136,6 +170,8 @@
                 J'ai perdu
             </label>
         </div>
+
+        <!-- Ménu déroulant pour choisir l'adversaire -->
         <div class="form-row">
             <select class="form-select form-select-sm" aria-label="Small select example" name="opponent-id">
                 <option selected disabled>Choix de l'adversaire</option>
@@ -144,6 +180,8 @@
                 {{/opponents}}
             </select>
         </div>
+
+        <!-- Zones pour saisir le score -->
         <div class="row d-flex justify-content-center mb-2">
             <label for="formGroupExampleInput" class="col-12 text-center mb-2">Score</label>
             <div class="col-auto d-flex justify-content-center align-items-end">
@@ -158,18 +196,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Saisie de la date -->
         <div class="form-floating mb-3">
             <input id="date-input-fifa" type="date" class="form-control" name="date" required>
             <label for="floatingInput">Date</label>
         </div>
+
+        <!-- Saisie de l'heure -->
         <div class="form-floating mb-3">
-            <input type="time" class="form-control" name="time" value="12:00" required>
+            <input id="time-input-fifa" type="time" class="form-control" name="time" required>
             <label for="floatingInput">Heure</label>
         </div>
+
+        <!-- Saisie des commentaires -->
         <div class="form-floating mb-3">
             <input type="text" class="form-control" name="comments" style="height: 100px">
             <label for="floatingInput">Commentaires (visibles par tous)</label>
         </div>
+
+        <!-- Saisie d'une image -->
         <div class="container">
             <div class="row pt-4">
                 <div class="col text-center">
@@ -177,23 +223,32 @@
                 </div>
             </div>
             <div class="row pt-4 justify-content-center">
+                <!-- Prendre une photo -->
                 <div class="col-4 text-end pe-5">
-                    <button type="button" class="camera-btn" onclick="openCamera('camera', 'fifa')">Prendre une photo de
-                        votre match</button>
+                    <button type="button" class="camera-btn" onclick="openCamera('camera', 'fifa')">
+                        <img src="svg/device-camera.svg" class="icon-img"> 
+                        <br> Prendre une photo
+                    </button>
                 </div>
+                <!-- Choisir une photo dans la galerie -->
                 <div class="col-4 text-start ps-5">
-                    <button type="button" class="camera-btn" onclick="openCamera('album', 'fifa')">Utiliser une photo de
-                        sa galerie</button>
+                    <button type="button" class="camera-btn" onclick="openCamera('album', 'fifa')">
+                        <img src="svg/device-mobile.svg" class="icon-img"> 
+                        <br> Ouvrir la galerie
+                    </button>
                 </div>
             </div>
 
         </div>
 
+        <!-- Bouton de validation du formulaire -->
         <div class="d-flex justify-content-center mt-5">
             <button type="submit" class="submit-btn"> Valider le match</button>
         </div>
     </form>
 
+
+    <!-- Modal Bootstrap pour le retour utilisateur après la saisie d'un match -->
     <div id="#modal-match" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

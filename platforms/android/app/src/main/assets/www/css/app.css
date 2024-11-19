@@ -1,13 +1,9 @@
-
 /* Global Styles */
 /* Optionally, apply glass effect for UI elements on these pages */
 .bg-glass {
   background-color: hsla(0, 0%, 100%, 0.8) !important;
   backdrop-filter: saturate(200%) blur(25px);
 }
-
-
-
 
 .bg-glass {
   background-color: hsla(0, 0%, 100%, 0.8) !important;
@@ -36,6 +32,10 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   /* Smooth edges */
+}
+.logo-right {
+  height: 40px; /* Ajustez la taille du logo */
+  width: auto;
 }
 
 /* Navbar links */
@@ -224,6 +224,7 @@
 .submit-btn:active {
   transform: translateY(1px);
 }
+
 /* Stylish Grey Camera Button Styling */
 .camera-btn {
   padding: 12px 24px;
@@ -311,10 +312,13 @@
 /* Icon Buttons Container */
 .icon-buttons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
-  gap: 20px; /* Space between items */
+  grid-template-columns: repeat(2, 1fr);
+  /* Two buttons per row */
+  gap: 20px;
+  /* Space between items */
   max-width: 600px;
-  margin: 0 auto; /* Center the grid */
+  margin: 0 auto;
+  /* Center the grid */
 }
 
 /* Style for each button */
@@ -323,14 +327,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none; /* Removes underline */
+  text-decoration: none;
+  /* Removes underline */
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #000; /* Default text color */
-  background-color: #fff; /* Default background color */
+  color: #000;
+  /* Default text color */
+  background-color: #fff;
+  /* Default background color */
   padding: 10px;
   border-radius: 8px;
-  margin: 0px; 
+  margin: 0px;
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -348,12 +355,15 @@
 
 /* Specific hover effect for the logout button */
 #logout-btn {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for background color and text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transition for background color and text */
 }
 
 #logout-btn:hover {
-  background-color: #ff4d4d; /* Change background to red on hover */
-  color: #fff; /* Change text color to white */
+  background-color: #ff4d4d;
+  /* Change background to red on hover */
+  color: #fff;
+  /* Change text color to white */
 }
 
 #logout-btn:hover .icon-img {
@@ -361,8 +371,10 @@
   /* Change the icon color to white */
 }
 
-#logout-btn:hover .icon-text, #logout-btn:hover .text-muted {
-  color: white; /* Change text to white on hover */
+#logout-btn:hover .icon-text,
+#logout-btn:hover .text-muted {
+  color: white;
+  /* Change text to white on hover */
 }
 
 /* Icon images */
@@ -386,8 +398,9 @@
 }
 
 /* Special row layout for the last item */
-.icon-buttons > :last-child {
-  grid-column: span 2; /* Span across two columns */
+.icon-buttons> :last-child {
+  grid-column: span 2;
+  /* Span across two columns */
 }
 
 
@@ -560,7 +573,9 @@
   max-width: 350px;
   height: auto;
 }
-#allresults-page, #myresults-page {
+
+#allresults-page,
+#myresults-page {
   background-color: #f8f9fa;
   font-family: 'Arial', sans-serif;
   padding: 30px;
@@ -579,6 +594,7 @@ table {
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .results-head {
   background-color: hsl(218, 41%, 15%);
   background-image: radial-gradient(650px circle at 0% 0%,
@@ -594,13 +610,20 @@ table {
       hsl(218, 41%, 19%) 80%,
       transparent 100%);
 }
-#tennis-allresults th, #fifa-allresults th, #tennis-myresults th, #fifa-myresults {
-  color: white !important; /* Force white text */
-  text-align: center !important;  /* Force text center alignment */
+
+#tennis-allresults th,
+#fifa-allresults th,
+#tennis-myresults th,
+#fifa-myresults {
+  color: white !important;
+  text-align: center !important;
   font-weight: bold;
   padding: 1rem;
 }
-#tennis-allresults tbody, #fifa-allresults tbody, #tennis-myresults tbody, #fifa-myresults tbody {
-  text-align: center !important;  /* Force text center alignment */
-}
 
+#tennis-allresults tbody,
+#fifa-allresults tbody,
+#tennis-myresults tbody,
+#fifa-myresults tbody {
+  text-align: center !important;
+}

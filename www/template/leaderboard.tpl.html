@@ -35,13 +35,15 @@
     </style>
     <div class="container">
         <section class="background-radial-gradient overflow-hidden">
+            <!-- Menu déroulant pour choisir le jeu -->
             <select id="choose_leaderboard" class="form-select form-select-lg mb-3 d-flex justify-content-center"
                 aria-label="Large select example">
                 <option selected disabled>Choisis ton classement</option>
-                <option value="tennis">Tennis</option>
-                <option value="fifa">FIFA</option>
+                <option value="Tennis">Tennis</option>
+                <option value="FIFA">FIFA</option>
             </select>
 
+            <!-- Classement pour le tennis -->
             <table id="tennis_table" class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -76,6 +78,8 @@
                     {{/tennisUsers}}
                 </tbody>
             </table>
+
+            <!-- Classement pour FIFA -->
             <table id="FIFA_table" class="table">
                 <thead class="thead-dark">
                     <tr>

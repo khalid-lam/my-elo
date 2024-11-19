@@ -3,15 +3,18 @@
 
 <body id="myresults-page">
     <div class="container">
+        <!-- Menu déroulant pour choisir le jeu -->
         <select id="game-myresults" class="form-select form-select-lg mb-3" aria-label="Large select example">
             <option selected disabled>Choisis ton jeu</option>
             <option value="Tennis">Tennis</option>
             <option value="FIFA">FIFA</option>
         </select>
 
+        <!-- Table pour le tennis -->
         <div id="tennis-myresults" class="tennis-myresults">
             <table class="table">
                 <thead>
+                    <!-- Nom des colonnes de la table -->
                     <tr class="results-head">
                         <th scope="col">Joueur 1</th>
                         <th scope="col">Joueur 2</th>
@@ -19,13 +22,16 @@
                     </tr>
                 </thead>
                 <tbody id="match-rows-tennis">
+                    <!-- Les lignes sont ajoutées dans app.js -->
                 </tbody>
             </table>
         </div>
 
+        <!-- Table pour FIFA -->
         <div id="fifa-myresults" class="fifa-myresults">
             <table class="table">
                 <thead>
+                    <!-- Nom des colonnes de la table -->
                     <tr class="results-head">
                         <th scope="col">Joueur 1</th>
                         <th scope="col">Joueur 2</th>
@@ -33,6 +39,7 @@
                     </tr>
                 </thead>
                 <tbody id="match-rows-fifa">
+                    <!-- Les lignes sont ajoutées dans app.js -->
                 </tbody>
             </table>
         </div>

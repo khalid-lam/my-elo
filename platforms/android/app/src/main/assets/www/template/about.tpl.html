@@ -1,111 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline';">
+</head>
 
 <body id="about-page">
     <section class="background-radial-gradient overflow-hidden">
         <style>
-        body{
-            color: white;
-        }
-          .background-radial-gradient {
-            background-color: hsl(218, 41%, 15%);
-            background-image: radial-gradient(650px circle at 0% 0%,
-                hsl(218, 41%, 35%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%),
-              radial-gradient(1250px circle at 100% 100%,
-                hsl(218, 41%, 45%) 15%,
-                hsl(218, 41%, 30%) 35%,
-                hsl(218, 41%, 20%) 75%,
-                hsl(218, 41%, 19%) 80%,
-                transparent 100%);
-          }
-      
-          .bg-glass {
-            background-color: hsla(0, 0%, 100%, 0.9) !important;
-            backdrop-filter: saturate(200%) blur(25px);
-          }
-    
+            body {
+                color: white;
+            }
+
+            .background-radial-gradient {
+                background-color: hsl(218, 41%, 15%);
+                background-image: radial-gradient(650px circle at 0% 0%,
+                        hsl(218, 41%, 35%) 15%,
+                        hsl(218, 41%, 30%) 35%,
+                        hsl(218, 41%, 20%) 75%,
+                        hsl(218, 41%, 19%) 80%,
+                        transparent 100%),
+                    radial-gradient(1250px circle at 100% 100%,
+                        hsl(218, 41%, 45%) 15%,
+                        hsl(218, 41%, 30%) 35%,
+                        hsl(218, 41%, 20%) 75%,
+                        hsl(218, 41%, 19%) 80%,
+                        transparent 100%);
+            }
+
+            .bg-glass {
+                background-color: hsla(0, 0%, 100%, 0.9) !important;
+                backdrop-filter: saturate(200%) blur(25px);
+            }
         </style>
-    <div class="container mt-5">
+        <div class="container mt-5">
 
-        <section id="why-myel">
-            <h2>Pourquoi MyElo ?</h2>
-            <p>
-                Nous sommes une petite équipe de passionnés de compétitions et de données, dédiée à offrir un système de classement juste et évolutif pour des jeux variés tels que le Tennis et le célèbre jeu de football Fifa. 
-                Notre objectif est de fournir une méthode transparente pour évaluer vos performances tout en reflétant vos progrès dans le temps.
-            </p>
-        </section>
-
-        <hr>
-
-
-        <section id="elo-calcul">
-            <h2>Détails du Calcul d'Elo</h2>
-            <p>
-                Le calcul du score Elo repose sur les principes suivants et certains paramètres communs qui s'appliquent à tous les jeux :
-            </p>
-
-
-            <h4>Paramètres communs</h4>
-            <ul>
-                <li><strong>Constante</strong> K = 30 : détermine l'impact d'un match sur le score Elo.</li>
-                <li><strong>Paramètre de performance</strong> λ = 0.2 : ajuste l'impact de la différence de résultats entre les joueurs sur leur Elo.</li>
-                <li><strong>Probabilité de victoire</strong> : calculée à l'aide de la formule suivante :
-                    \[
-                    E = \frac{1}{1 + 10^{\frac{\text{Elo de l'adversaire} - \text{Elo du joueur}}{400}}}
-                    \]
-                </li>
-                <li><strong>Limite de score</strong> : un joueur dont l'Elo est inférieur à 200 ne perd pas de points, même en cas de défaite.</li>
-            </ul>
+            <section id="why-myel">
+                <h2>Pourquoi MyElo ?</h2>
+                <p>
+                    Nous sommes une petite équipe de passionnés de compétitions et de données, dédiée à offrir un
+                    système de classement juste et évolutif pour des jeux variés tels que le Tennis et le célèbre jeu de
+                    football Fifa.
+                    Notre objectif est de fournir une méthode transparente pour évaluer vos performances tout en
+                    reflétant vos progrès dans le temps.
+                </p>
+            </section>
 
             <hr>
 
-            <h3>Tennis</h3>
-            <ul>
-                Le résultat d'un match est basé sur le nombre de sets gagnés.
-            </ul>
-            <p>La formule de mise à jour de l'Elo pour le tennis est :</p>
-            <div class="math">
+            <!-- Sous-section : Calcul de l'elo -->
+            <section id="elo-calcul">
+                <h2>Détails du Calcul d'Elo</h2>
                 <p>
-                    <strong>Delta :</strong>
-                    \[
-                    \delta = 1 + 0.2 \times \text{Différence de sets remportés}
-                    \]
+                    Le calcul du score Elo repose sur les principes suivants et certains paramètres communs qui
+                    s'appliquent à tous les jeux :
                 </p>
-                <p>
-                    <strong>Calcul de l'Elo :</strong>
-                    \[
-                    \text{Nouvel Elo} = K \times (1 - E) \times \delta
-                    \]
-                </p>
-            </div>
 
-            <hr>
+                <!-- Sous-section : Paramètres communs -->
+                <h4>Paramètres communs</h4>
+                <ul>
+                    <li><strong>Constante</strong> K = 30 : détermine l'impact d'un match sur le score Elo.</li>
+                    <li><strong>Paramètre de performance</strong> λ = 0.2 : ajuste l'impact de la différence de
+                        résultats entre les joueurs sur leur Elo.</li>
+                    <li><strong>Probabilité de victoire</strong> : calculée à l'aide de la formule suivante :
+                        \[
+                        E = \frac{1}{1 + 10^{\frac{\text{Elo de l'adversaire} - \text{Elo du joueur}}{400}}}
+                        \]
+                    </li>
+                    <li><strong>Limite de score</strong> : un joueur dont l'Elo est inférieur à 200 ne perd pas de
+                        points, même en cas de défaite.</li>
+                </ul>
 
-            <!-- Sous-section : FIFA -->
-            <h3>FIFA</h3>
-            <ul>
-                Le résultat d'un match est basé sur la différence de buts, avec une limite maximale de 5 buts.
-            </ul>
-            <p>La formule de mise à jour de l'Elo pour FIFA est :</p>
-            <div class="math">
-                <p>
-                    <strong>Delta :</strong>
-                    \[
-                    \delta = 1 + 0.2 \times \min(\text{Différence de but}, 5)
-                    \]
-                </p>
-                <p>
-                    <strong>Calcul de l'Elo :</strong>
-                    \[
-                    \text{Nouvel Elo} = K \times (1 - E) \times \delta
-                    \]
-                </p>
-            </div>
-        </section>
-    </div>
+                <hr>
+
+                <!-- Sous-section : Tennis -->
+                <h3>Tennis</h3>
+                <ul>
+                    Le résultat d'un match est basé sur le nombre de sets gagnés.
+                </ul>
+                <p>La formule de mise à jour de l'Elo pour le tennis est :</p>
+                <div class="math">
+                    <p>
+                        <strong>Delta :</strong>
+                        \[
+                        \delta = 1 + 0.2 \times \text{Différence de sets remportés}
+                        \]
+                    </p>
+                    <p>
+                        <strong>Calcul de l'Elo :</strong>
+                        \[
+                        \text{Nouvel Elo} = K \times (1 - E) \times \delta
+                        \]
+                    </p>
+                </div>
+
+                <hr>
+
+                <!-- Sous-section : FIFA -->
+                <h3>FIFA</h3>
+                <ul>
+                    Le résultat d'un match est basé sur la différence de buts, avec une limite maximale de 5 buts.
+                </ul>
+                <p>La formule de mise à jour de l'Elo pour FIFA est :</p>
+                <div class="math">
+                    <p>
+                        <strong>Delta :</strong>
+                        \[
+                        \delta = 1 + 0.2 \times \min(\text{Différence de but}, 5)
+                        \]
+                    </p>
+                    <p>
+                        <strong>Calcul de l'Elo :</strong>
+                        \[
+                        \text{Nouvel Elo} = K \times (1 - E) \times \delta
+                        \]
+                    </p>
+                </div>
+            </section>
+        </div>
 </body>
+
 </html>
