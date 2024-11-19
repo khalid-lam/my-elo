@@ -536,11 +536,10 @@ $(document).ready(function () {
 
     function getIfUserIsLogged() {
         // fonction avec un système de promesse qui renvoie si l'utilisateur est connecté ou non
-        console.log("fonction isConnected appelée");
         return new Promise((resolve, reject) => {
             if (localStorage["login"] && localStorage["access_token"]) {
                 if (localStorage["login"] != "" && localStorage["access_token"]) {
-                    const logData = { "login": localStorage["login"], "access_token": localStorage["access_token"] };
+                    logData = { "login": localStorage["login"], "access_token": localStorage["access_token"] };
                     $.post(url + "/logged.php", logData, function (answer) {
                         if (answer["status"] == "success") {
                             resolve(true); // L'utilisateur est connecté
