@@ -511,7 +511,7 @@ $(document).ready(function () {
                             window.location.href = "index.html#home";
                         }
                     })
-                    .catch((error) => {});
+                    .catch((error) => { });
                 // Chargement de index.html    
                 $.get("template/index.tpl.html", function (template) {
                     $("#my-content").html(template);
