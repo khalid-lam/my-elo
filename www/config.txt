@@ -1,8 +1,14 @@
 POUR CONFIGURER L'APPLICATION
 
+
+Cordova
+- installer le plugin cordova-plugin-file
+- installer le plugin cordova-plugin-camera
+
 Mise à jour de l'adresse du serveur :
 - changer la variable "url"         js/oauth.js ligne 1
 - changer la variable $dbServer     public_html/includes/database.class.php ligne 9
+
 
 Compte créé pour vous :
 Login = ""

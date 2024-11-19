@@ -81,9 +81,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#newmatch":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected(); //renvoie à index.html si l'utilisateur n'est pas connecté
                 $.get("template/newmatch.tpl.html", function (template) {
                     $("#my-content").html(template);
                     $("#tennis-form").hide();
@@ -101,9 +99,7 @@ $(document).ready(function () {
                 break;
             // On décline le case #newmatch en #newmatchtennis et #newmatchfifa pour éviter l'imbrication infinie du changement de valeurs de #game
             case "#newmatchtennis":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/newmatch.tpl.html", function (template) {
                     currentuser = { "username": localStorage["login"] };
                     $.post(url + "/opponent.php", currentuser, function (opponentList) {
@@ -189,9 +185,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#newmatchfifa":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/newmatch.tpl.html", function (template) {
                     currentuser = { "username": localStorage["login"] };
                     $.post(url + "/opponent.php", currentuser, function (opponentList) {
@@ -331,9 +325,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#myresults":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     var template2 = Mustache.render(template, { myFifaResults: {}, myTennisResults: {} });
                     $("#my-content").html(template2);
@@ -350,6 +342,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#my_tennis_results":
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     currentGame = { "game": "tennis", "user": localStorage["login"] };
                     $.post(url + "/myresults.php", currentGame, function (myResults) {
@@ -376,9 +369,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#my_fifa_results":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     currentGame = { "game": "fifa", "user": localStorage["login"] };
                     $.post(url + "/myresults.php", currentGame, function (myResults) {
@@ -486,10 +477,7 @@ $(document).ready(function () {
                 break;
             // Interface home : l'utilisateur y accède après s'être connecté
             case "#home":
-                if (!isConnected()) {
-                    console.log("redirection vers non-connecté");
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/home.tpl.html", function (template) {
                     template2 = template.replace("{{login}}", localStorage["login"]);
                     $("#my-content").html(template2);
@@ -516,43 +504,54 @@ $(document).ready(function () {
                 }, "html");
                 break;
             default:
-                // Si un utilisateur est connecté, le default case le redirige vers l'interface home
-                isConnected().then((result) => {
-                    console.log("redirection vers home");
-                    window.location.href = "index.html#home";
-                }).catch((error) => {
-                    console.log("pas de redirection vers home")
-                    $.get("template/index.tpl.html", function (template) {
-                        $("#my-content").html(template);
-                    }, "html");
-                });
+                // Redirection vers #home si l'utilisateur est connecté
+                getIfUserIsLogged()
+                    .then((result) => {
+                        if (result) {
+                            window.location.href = "index.html#home";
+                        }
+                    })
+                    .catch((error) => {});
+                // Chargement de index.html    
+                $.get("template/index.tpl.html", function (template) {
+                    $("#my-content").html(template);
+                }, "html");
                 break;
         }
     }
 
+
     function isConnected() {
+        // ne fait rien si l'utilisateur est connecté, et renvoie vers la page #not-connected sinon
+        getIfUserIsLogged()
+            .then((result) => {
+                if (!result) {
+                    window.location.href = "index.html#not-connected";
+                }
+            })
+            .catch((error) => {
+                window.location.href = "index.html";
+            });
+    }
+
+    function getIfUserIsLogged() {
+        // fonction avec un système de promesse qui renvoie si l'utilisateur est connecté ou non
         console.log("fonction isConnected appelée");
         return new Promise((resolve, reject) => {
             if (localStorage["login"] && localStorage["access_token"]) {
                 if (localStorage["login"] != "" && localStorage["access_token"]) {
-                    logData = { "login": localStorage["login"], "access_token": localStorage["access_token"] }
-                    console.log("post envoyé");
-                    console.log(logData);
+                    const logData = { "login": localStorage["login"], "access_token": localStorage["access_token"] };
                     $.post(url + "/logged.php", logData, function (answer) {
-                        console.log("post reçu");
-                        console.log(answer);
                         if (answer["status"] == "success") {
-                            console.log("redirection vers connecté");
-                            resolve(true);
+                            resolve(true); // L'utilisateur est connecté
+                        } else {
+                            reject("Échec de la connexion");
                         }
-                        else { reject("Échec de la connexion"); }
                     });
-                }
-                else {
+                } else {
                     reject("Échec de la connexion");
                 }
-            }
-            else {
+            } else {
                 reject("Échec de la connexion");
             }
         });

@@ -3,7 +3,5 @@
 (- reparer leaderboard sur mobile)
 
 
-
-
 Lien du rapport Overleaf : https://www.overleaf.com/6314859471pqqvfwgbwdss#d3aa46
 Lien du ppt : https://docs.google.com/presentation/d/1-KjfZauZmYnUUgfzE-rNhcSqXdwPZy-GTReOThTXhpo/edit?usp=sharing
