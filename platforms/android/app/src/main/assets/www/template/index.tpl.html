@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-</head>
+<body id="index-page">
+    <style>body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+                hsl(218, 41%, 35%) 15%,
+                hsl(218, 41%, 30%) 35%,
+                hsl(218, 41%, 20%) 75%,
+                hsl(218, 41%, 19%) 80%,
+                transparent 100%),
+            radial-gradient(1250px circle at 100% 100%,
+                hsl(218, 41%, 45%) 15%,
+                hsl(218, 41%, 30%) 35%,
+                hsl(218, 41%, 20%) 75%,
+                hsl(218, 41%, 19%) 80%,
+                transparent 100%);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
 
-<body>
-    <div class="list-group">
-        <a href="index.html#login" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">
-                    <img src="svg/key.svg" class="menu-icon"> Se connecter
-                </h5>
-            </div>
-        </a>
-        <a href="index.html#register" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">
-                    <img src="svg/page-edit.svg" class="menu-icon"> S'inscrire
-                </h5>
-            </div>
-        </a>
-        <a href="index.html#allresults" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">
-                    <img src="svg/page-search.svg" class="menu-icon"> Les derniers résultats
-                </h5>
-            </div>
-            <small class="text-muted">de tous</small>
-        </a>
-        <a href="index.html#leaderboard" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">
-                    <img src="svg/leaderboard-star.svg" class="menu-icon"> Classement général
-                </h5>
-            </div>
-        </a>
-        <a href="index.html#about" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">
-                    <img src="svg/help-circle.svg" class="menu-icon"> A propos
-                </h5>
-            </div>
-            <small class="text-muted">Notre histoire</small>
-        </a>
-    </div>
+        color: white; /* Couleur du texte en blanc */
+        padding: 0;
+    }
+
+    /* Optionnel : Ajout d'un effet de fond verre pour certains éléments */
+    .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+    }
+</style>
+<div class="icon-buttons mt-5">
+    <a href="index.html#login" class="icon-button">
+        <img src="svg/key.svg" class="icon-img" alt="Se connecter">
+        <span class="icon-text">Se connecter</span>
+    </a>
+    <a href="index.html#register" class="icon-button">
+        <img src="svg/page-edit.svg" class="icon-img" alt="S'inscrire">
+        <span class="icon-text">S'inscrire</span>
+    </a>
+    <a href="index.html#allresults" class="icon-button">
+        <img src="svg/page-search.svg" class="icon-img" alt="Les derniers résultats">
+        <span class="icon-text">Les derniers résultats</span>
+        <small class="text-muted">de tous les joueurs</small>
+    </a>
+    <a href="index.html#leaderboard" class="icon-button">
+        <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
+        <span class="icon-text">Classement général</span>
+    </a>
+    <a href="index.html#about" class="icon-button">
+        <img src="svg/help-circle.svg" class="icon-img" alt="À propos">
+        <span class="icon-text">À propos</span>
+        <small class="text-muted">Notre histoire</small>
+    </a>
+</div>
+
     
     <div id="#modal-not-connected" class="modal" tabindex="-1" role="dialog" style="display: none !important;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modal-login-title" class="modal-title">Vous ne pouvez pas accéder à cette page</h5>
+                    <h5 id="modal-login-title" class="modal-title"style="color: black;">Vous ne pouvez pas accéder à cette page</h5>
                 </div>
                 <div class="modal-body">
-                    <p id="modal-not-connected-message">Vous n'êtes pas connecté</p>
+                    <p id="modal-not-connected-message" style="color: black;">Vous n'êtes pas connecté</p>
                 </div>
                 <div class="modal-GIF"></div>
                 <div class="modal-footer">
-                    <button id="bouton-not-connected" type="button" class="btn btn-primary">Retour à l'accueil</button>
+                    <button id="bouton-not-connected" type="button" class="submit-btn">Retour à l'accueil</button>
                 </div>
             </div>
         </div>

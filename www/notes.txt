@@ -1,5 +1,10 @@
             CHOSES A FAIRE
 - ajouter dans mes résultats une catégorie Mes informations et mon elo
+- reparer leaderboard sur mobile
 - le LateX ne s'affiche pas sur télephone
 - commenter un peu plus le code
 - faire un peu de ménage dans les fichiers et dans la database afin de fournir une db potable
+
+
+Lien du rapport Overleaf : https://www.overleaf.com/6314859471pqqvfwgbwdss#d3aa46
+Lien du ppt : https://docs.google.com/presentation/d/1-KjfZauZmYnUUgfzE-rNhcSqXdwPZy-GTReOThTXhpo/edit?usp=sharing

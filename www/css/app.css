@@ -1,136 +1,157 @@
-.blue-bg {
-    background-color: #e3f2fd;
-}
 /* Global Styles */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  /* Navbar */
-  .navbar {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #3a4664;
-    border-bottom: 2px solid #ff5733;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #ffffff; 
-    font-size: 25px;
-    font-weight: bold;
-    margin-right: 20px;
-    transition: all 0.3s ease;
+/* Optionally, apply glass effect for UI elements on these pages */
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.8) !important;
+  backdrop-filter: saturate(200%) blur(25px);
 }
-  
-  .navbar a:hover {
-    color: #ff5733; 
-    text-decoration: none;
-    padding-bottom: 2px;
+
+
+
+
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.8) !important;
+  /* Less opaque */
+  backdrop-filter: saturate(200%) blur(20px);
+  /* Slightly less blur */
+}
+
+
+/* Navbar */
+.navbar {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  /* Glass-like background */
+  backdrop-filter: saturate(200%) blur(25px);
+  /* Blurred effect */
+  border-bottom: 2px solid hsl(218, 41%, 45%);
+  /* Matches form colors */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  /* Smooth edges */
+}
+
+/* Navbar links */
+.navbar a {
+  text-decoration: none;
+  color: hsl(218, 41%, 35%);
+  /* Matches the form gradient */
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: hsl(218, 41%, 45%);
+  /* Highlight on hover */
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+/* Brand styling */
+.navbar .brand {
+  font-weight: bold;
+  font-size: 24px;
+  color: hsl(218, 41%, 35%);
+}
+
+.navbar .brand:hover {
+  color: hsl(218, 41%, 45%);
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
   }
-  
-  .navbar .brand {
-    font-weight: bold;
-    font-size: 22px;
-    color: #ffffff; 
-  }
-  
-  .navbar .brand:hover {
-    color: #ff5733; 
-  }
-  
 
   .nav-links {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
-  
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-    }
-  
-    .nav-links a {
-      margin-right: 0;
-    }
+  .nav-links a {
+    margin-right: 0;
   }
-  
-  /* Style pour les listes */
+}
+
+
+/* Style pour les listes */
+.list-group {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f7f7f7;
+  transform: scale(1.02);
+}
+
+/* Style pour les icones */
+.menu-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Style pour le survol */
+.list-group-item:hover .menu-icon {
+  transform: translateX(5px);
+}
+
+.list-group-item h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Sous-titre */
+.text-muted {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .list-group {
-    max-width: 400px; 
-    margin: 20px auto;
-    padding: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    width: 100%;
+    /* Occupe toute la largeur sur petits écrans */
   }
-  
-  .list-group-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .list-group-item:hover {
-    background-color: #f7f7f7;
-    transform: scale(1.02); 
-  }
-  
-  /* Style pour les icones */
-  .menu-icon {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Style pour le survol */
-  .list-group-item:hover .menu-icon {
-    transform: translateX(5px); 
-  }
-  
-  .list-group-item h5 {
-    margin: 0;
-    font-weight: 600;
-    color: #333;
-    font-size: 18px;
-  }
-  
-  /* Sous-titre */
-  .text-muted {
-    font-size: 14px;
-    color: #888;
-    font-style: italic;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .list-group {
-      width: 100%; /* Occupe toute la largeur sur petits écrans */
-    }
-  }
- /* Conteneur de connexion */
+}
+
+/* Conteneur de connexion */
 .login-form {
   max-width: 400px;
   margin: 50px auto;
@@ -141,7 +162,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* Titre */
 .login-form h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -149,7 +169,6 @@ body {
   color: #333;
 }
 
-/* Input Group */
 .input-group {
   margin-bottom: 20px;
 }
@@ -183,7 +202,6 @@ body {
   outline: none;
 }
 
-/* Bouton de soumission */
 .submit-btn {
   width: 100%;
   padding: 12px;
@@ -206,7 +224,45 @@ body {
   transform: translateY(1px);
 }
 
-/* Texte additionnel */
+/* Stylish Grey Camera Button Styling */
+.camera-btn {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #757575, #9e9e9e);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  margin: 5px;
+}
+
+/* Hover Effect for Grey Button */
+.camera-btn:hover {
+  background: linear-gradient(45deg, #616161, #757575);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus Effect */
+.camera-btn:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.4);
+}
+
+/* Disabled State */
+.camera-btn:disabled {
+  background: #bdbdbd;
+  color: #9e9e9e;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .login-form p {
   text-align: center;
   font-size: 14px;
@@ -222,74 +278,175 @@ body {
   text-decoration: underline;
 }
 
-  
-  /* Button */
-  .btn-primary {
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 8px;
-    background-color: #007bff;
-    border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Icon Style */
-  .menu-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Hover effect for icon */
-  .input-group-text:hover .menu-icon {
-    transform: translateX(5px); /* Little movement effect */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .login-form {
-      width: 90%;
-    }
-  }
-  .details-row-content {
-    transition: max-height 0.3s ease-out; /* Smooth sliding effect */
-    overflow: hidden; /* Prevent content from overflowing */
-    max-height: 0; /* Initially hidden */
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s ease;
 }
-/* Style for the arrow icon */
-.accordion-arrow {
-  font-size: 20px; /* Arrow size */
+
+/*Survol*/
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Style des icones*/
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Survol des icones */
+.input-group-text:hover .menu-icon {
+  transform: translateX(5px);
+  /* Little movement effect */
+}
+
+/* Icon Buttons Container */
+.icon-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Two buttons per row */
+  gap: 20px;
+  /* Space between items */
+  max-width: 600px;
+  margin: 0 auto;
+  /* Center the grid */
+}
+
+/* Style for each button */
+
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  /* Removes underline */
   cursor: pointer;
-  transition: transform 0.3s ease; /* Smooth rotation */
-  margin-left: 10px; /* Space between score and arrow */
-  float: right; /* Position the arrow at the end of the row */
+  transition: all 0.3s ease;
+  color: #000;
+  /* Default text color */
+  background-color: #fff;
+  /* Default background color */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.icon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for all icons */
+.icon-button:hover .icon-img {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(89%) saturate(746%) hue-rotate(357deg) brightness(95%) contrast(86%);
+  /* Change the icon color on hover */
+}
+
+/* Specific hover effect for the logout button */
+#logout-btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transition for background color and text */
+}
+
+#logout-btn:hover {
+  background-color: #ff4d4d;
+  /* Change background to red on hover */
+  color: #fff;
+  /* Change text color to white */
+}
+
+#logout-btn:hover .icon-img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+  /* Change the icon color to white */
+}
+
+#logout-btn:hover .icon-text,
+#logout-btn:hover .text-muted {
+  color: white;
+  /* Change text to white on hover */
+}
+
+/* Icon images */
+.icon-img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Icon text */
+.icon-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Muted text below */
+.text-muted {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Special row layout for the last item */
+.icon-buttons> :last-child {
+  grid-column: span 2;
+  /* Span across two columns */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-form {
+    width: 90%;
+  }
+}
+
+.details-row-content {
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+/* Style pour la flèche de Derniers résultats */
+.accordion-arrow {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+  float: right;
 }
 
 .accordion-arrow.up {
-  transform: rotate(180deg); /* Rotate to point up */
+  transform: rotate(180deg);
+  /* Flèche vers le haut */
 }
 
 .accordion-arrow.down {
-  transform: rotate(0deg); /* Arrow points down */
+  transform: rotate(0deg);
+  /* Flèche vers le bas */
 }
 
 /* Ensure the arrow stays at the right end of the row */
 .score-cell {
   position: relative;
-  padding-right: 30px; /* Make space for the arrow */
+  padding-right: 30px;
 }
 
-/* Common table styling for both tables */
-#tennis_table, #FIFA_table {
+/* Style pour le leaderboard */
+#tennis_table,
+#FIFA_table {
   width: 100%;
   max-width: 1200px;
-  margin: 20px auto; /* Center the tables */
+  margin: 20px auto;
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
@@ -297,70 +454,88 @@ body {
   background-color: white;
 }
 
-/* Table Header Styling for both tables */
-#tennis_table thead, #FIFA_table thead {
+
+#tennis_table thead,
+#FIFA_table thead {
   background-color: #007bff;
   color: white;
   text-align: center;
 }
 
-#tennis_table th, #FIFA_table th {
+#tennis_table th,
+#FIFA_table th {
   padding: 12px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-/* Table Body Styling for both tables */
-#tennis_table tbody, #FIFA_table tbody {
+
+#tennis_table tbody,
+#FIFA_table tbody {
   text-align: center;
 }
 
-#tennis_table tr:nth-child(odd), #FIFA_table tr:nth-child(odd) {
-  background-color: #f8f9fa; /* Light gray background for odd rows */
+#tennis_table tr:nth-child(odd),
+#FIFA_table tr:nth-child(odd) {
+  background-color: #f8f9fa;
 }
 
-#tennis_table tr:nth-child(even), #FIFA_table tr:nth-child(even) {
-  background-color: #ffffff; /* White background for even rows */
+#tennis_table tr:nth-child(even),
+#FIFA_table tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
-#tennis_table tr:hover, #FIFA_table tr:hover {
-  background-color: #e9f7ff; /* Hover effect on rows */
+#tennis_table tr:hover,
+#FIFA_table tr:hover {
+  background-color: #e9f7ff;
   cursor: pointer;
 }
 
 /* Style des classements */
-#tennis_table td, #FIFA_table td {
+#tennis_table td,
+#FIFA_table td {
   padding: 12px;
   font-size: 1rem;
   color: #333;
 }
 
-#tennis_table td:first-child, #FIFA_table td:first-child {
+#tennis_table td:first-child,
+#FIFA_table td:first-child {
   font-weight: bold;
   color: #000000;
 }
 
-#tennis_table td:nth-child(2), #FIFA_table td:nth-child(2), 
-#tennis_table td:nth-child(3), #FIFA_table td:nth-child(3), 
-#tennis_table td:nth-child(4), #FIFA_table td:nth-child(4), 
-#tennis_table td:nth-child(5), #FIFA_table td:nth-child(5), 
-#tennis_table td:nth-child(6), #FIFA_table td:nth-child(6) {
+#tennis_table td:nth-child(2),
+#FIFA_table td:nth-child(2),
+#tennis_table td:nth-child(3),
+#FIFA_table td:nth-child(3),
+#tennis_table td:nth-child(4),
+#FIFA_table td:nth-child(4),
+#tennis_table td:nth-child(5),
+#FIFA_table td:nth-child(5),
+#tennis_table td:nth-child(6),
+#FIFA_table td:nth-child(6) {
   font-weight: normal;
 }
 
-/* Styling for wins, losses, and draws in both tables */
-#tennis_table td:nth-child(4), #FIFA_table td:nth-child(4) {
-  color: #28a745; /* Victoire */
+#tennis_table td:nth-child(4),
+#FIFA_table td:nth-child(4) {
+  color: #28a745;
+  /* Victoire */
   font-weight: bold;
 }
 
-#tennis_table td:nth-child(5), #FIFA_table td:nth-child(5) {
-  color: #dc3545; /* Défaite */
+#tennis_table td:nth-child(5),
+#FIFA_table td:nth-child(5) {
+  color: #dc3545;
+  /* Défaite */
   font-weight: bold;
 }
 
-#tennis_table td:nth-child(6), #FIFA_table td:nth-child(6) {
-  color: #ffc107; /* Egalité */
+#tennis_table td:nth-child(6),
+#FIFA_table td:nth-child(6) {
+  color: #ffc107;
+  /* Egalité */
   font-weight: bold;
 }
 
@@ -370,26 +545,84 @@ body {
     width: 80%;
   }
 
-  #tennis_table, #FIFA_table {
+  #tennis_table,
+  #FIFA_table {
     width: 100%;
     font-size: 0.9rem;
   }
 
-  #tennis_table th, #FIFA_table th, #tennis_table td, #FIFA_table td {
+  #tennis_table th,
+  #FIFA_table th,
+  #tennis_table td,
+  #FIFA_table td {
     padding: 10px;
   }
 }
 
 .modal-GIF {
   display: flex;
-  justify-content: center; 
-  align-items: center;    
-  height: 100%;           
-  width: 100%;            
-  padding: 20px;          
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
 }
 
 .modal-GIF img {
-  max-width: 350px; 
-  height: auto;   
+  max-width: 350px;
+  height: auto;
+}
+
+#allresults-page,
+#myresults-page {
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  padding: 30px;
+}
+
+.form-select {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+table {
+  margin-top: 30px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results-head {
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(650px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%),
+    radial-gradient(1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%);
+}
+
+#tennis-allresults th,
+#fifa-allresults th,
+#tennis-myresults th,
+#fifa-myresults {
+  color: white !important;
+  text-align: center !important;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+#tennis-allresults tbody,
+#fifa-allresults tbody,
+#tennis-myresults tbody,
+#fifa-myresults tbody {
+  text-align: center !important;
 }

@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<body>
-    <select id="game-allresults" class="form-select form-select-lg mb-3 d-flex justify-content-center"
-        aria-label="Large select example">
-        <option selected disabled>Choisis ton jeu</option>
-        <option value="Tennis">Tennis</option>
-        <option value="FIFA">FIFA</option>
-    </select>
+<body id="allresults-page">
+    <div class="container">
+        <select id="game-allresults" class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected disabled>Choisis ton jeu</option>
+            <option value="Tennis">Tennis</option>
+            <option value="FIFA">FIFA</option>
+        </select>
 
-    
-    <table class="table" id="tennis-allresults">
-      <thead>
-        <tr>
-            <th scope="col">Joueur 1</th>
-            <th scope="col">Joueur 2</th>
-            <th scope="col">Score</th>
-        </tr>
-    </thead>
-    <tbody id="match-rows-tennis">
-    </tbody>
-      </table>
+        <!-- Tennis Results -->
+        <div id="tennis-allresults" class="game-results">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="results-head">
+                        <th scope="col">Joueur 1</th>
+                        <th scope="col">Joueur 2</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="match-rows-tennis">
+                    <!-- Tennis data rows will appear here -->
+                </tbody>
+            </table>
+        </div>
 
-      <table class="table" id="fifa-allresults">
-        <thead>
-            <tr>
-                <th scope="col">Joueur 1</th>
-                <th scope="col">Joueur 2</th>
-                <th scope="col">Score</th>
-            </tr>
-        </thead>
-        <tbody id="match-rows-fifa">
-        </tbody>
-    </table>
-    
-      </table>
+        <!-- FIFA Results -->
+        <div id="fifa-allresults" class="game-results">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="results-head">
+                        <th scope="col">Joueur 1</th>
+                        <th scope="col">Joueur 2</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="match-rows-fifa">
+                    <!-- FIFA data rows will appear here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>

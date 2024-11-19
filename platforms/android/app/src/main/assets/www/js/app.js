@@ -136,7 +136,7 @@ $(document).ready(function () {
                                 $("#modal-match-title").text("Erreur dans la saisie du match");
                                 $("#modal-match-message").text(score["msg"]);
                                 $("#bouton-retour-message").text("Saisir un match");
-                                $(".modal-GIF").append(`<img src="img/nadal-understand.gif" alt="GIF" class="img-fluid">`);
+                                $(".modal-GIF").empty().append(`<img src="img/nadal-understand.gif" alt="GIF" class="img-fluid">`);
                                 modal_match.show();
                                 $("#bouton_newmatch_retour").on("click", function () {
                                     modal_match.hide();
@@ -148,7 +148,7 @@ $(document).ready(function () {
                                     if (data["status"] == "success") {
                                         $("#modal-match-title").text("Match ajouté !");
                                         $("#modal-match-message").text("Les elos ont bien été mis à jour");
-                                        $(".modal-GIF").append(`<img src="img/federer-ok.gif" alt="GIF" class="img-fluid">`);
+                                        $(".modal-GIF").empty().append(`<img src="img/federer-ok.gif" alt="GIF" class="img-fluid">`);
                                     }
                                     else {
                                         $("#modal-match-title").text("Erreur");
@@ -207,7 +207,7 @@ $(document).ready(function () {
                             if (!score["score"]) {
                                 $("#modal-match-title").text("Erreur dans la saisie du match");
                                 $("#modal-match-message").text(score["msg"]);
-                                $(".modal-GIF").append(`<img src="img/ronaldo-angry.gif" alt="GIF" class="img-fluid">`);
+                                $(".modal-GIF").empty().append(`<img src="img/ronaldo-angry.gif" alt="GIF" class="img-fluid">`);
                                 $("#bouton-retour-message").text("Saisir un match");
                                 modal_match.show();
                                 $("#bouton_newmatch_retour").on("click", function () {
@@ -220,7 +220,7 @@ $(document).ready(function () {
                                     if (data["status"] == "success") {
                                         $("#modal-match-title").text("Match ajouté !");
                                         $("#modal-match-message").text("Les elos ont bien été mis à jour");
-                                        $(".modal-GIF").append(`<img src="img/messi-ok.gif" alt="GIF" class="img-fluid">`);
+                                        $(".modal-GIF").empty().append(`<img src="img/messi-ok.gif" alt="GIF" class="img-fluid">`);
                                     }
                                     else {
                                         $("#modal-match-title").text("Erreur");
@@ -389,6 +389,7 @@ $(document).ready(function () {
             case "#tennis_leaderboard":
                 $.get("template/leaderboard.tpl.html", function (template) {
                     $.getJSON(url + '/tennis_leaderboard.php', function (tennisUsersList) {
+                        currentUser = localStorage["login"];
                         tennisUsersList.forEach((user, index) => {
                             if (index === 0) {
                                 user.rank = '<i class="fas fa-crown" style="color: gold;"></i>'; // Gold crown for 1st place
@@ -459,7 +460,7 @@ $(document).ready(function () {
                 $.get("template/home.tpl.html", function (template) {
                     template2 = template.replace("{{login}}", localStorage["login"]);
                     $("#my-content").html(template2);
-                    $("#bouton-log-out").on('click', function () {
+                    $("#logout-btn").on('click', function () {
                         localStorage["login"] = "";
                         localStorage["access_token"] = "";
                     });

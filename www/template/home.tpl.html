@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<body>
-    <div class="list-group">
-        <a href="index.html#newmatch" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><img src="svg/plus-square.svg" style="margin-right: 10px;" alt="Saisir match">Saisir match</h5>
-            </div>
+
+<body id="home-page">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%,
+                    hsl(218, 41%, 35%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                    hsl(218, 41%, 45%) 15%,
+                    hsl(218, 41%, 30%) 35%,
+                    hsl(218, 41%, 20%) 75%,
+                    hsl(218, 41%, 19%) 80%,
+                    transparent 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
+
+            color: white;
+            padding: 0;
+        }
+
+        /*  Ajout d'un effet de fond verre pour certains éléments */
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
+    </style>
+    <div class="icon-buttons mt-5">
+        <a href="index.html#newmatch" class="icon-button">
+            <img src="svg/plus-square.svg" class="icon-img" alt="Saisir match">
+            <span class="icon-text">Saisir match</span>
         </a>
-        <a href="index.html#myresults" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><img src="svg/book.svg" style="margin-right: 10px;" alt="Mes résultats">Mes Résultats
-                </h5>
-            </div>
+        <a href="index.html#myresults" class="icon-button">
+            <img src="svg/book.svg" class="icon-img" alt="Mes résultats">
+            <span class="icon-text">Mes résultats</span>
+            <small class="text-muted">Vos performances</small>
         </a>
-        <a href="index.html#allresults" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><img src="svg/page-search.svg" style="margin-right: 10px;" alt="Historique Global">Historique
-                    global
-                </h5>
-            </div>
+        <a href="index.html#allresults" class="icon-button">
+            <img src="svg/page-search.svg" class="icon-img" alt="Historique Global">
+            <span class="icon-text">Historique global</span>
             <small class="text-muted">Tous les joueurs</small>
         </a>
-        <a href="index.html#leaderboard" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><img src="svg/leaderboard-star.svg" style="margin-right: 10px;"
-                        alt="Classement général">Classement général</h5>
-            </div>
+        <a href="index.html#leaderboard" class="icon-button">
+            <img src="svg/leaderboard-star.svg" class="icon-img" alt="Classement général">
+            <span class="icon-text">Classement général</span>
+            <small class="text-muted">Meilleurs joueurs</small>
         </a>
-        <a id="bouton-log-out" href="index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><img src="svg/lock.svg" style="margin-right: 10px;"
-                        alt="Déconnexion">Déconnexion</h5>
-            </div>
-            <small id="user-logged" class="text-muted"> Connecté en tant que {{login}} </small>
+        <a href="index.html" id="logout-btn" class="icon-button">
+            <img src="svg/lock.svg" class="icon-img" alt="Déconnexion">
+            <span class="icon-text">Déconnexion</span>
+            <small class="text-muted">Connecté en tant que {{login}}</small>
         </a>
     </div>
+
+
+
 </body>
 
 </html>
