@@ -81,9 +81,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#newmatch":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected(); //renvoie à index.html si l'utilisateur n'est pas connecté
                 $.get("template/newmatch.tpl.html", function (template) {
                     $("#my-content").html(template);
                     $("#tennis-form").hide();
@@ -101,9 +99,7 @@ $(document).ready(function () {
                 break;
             // On décline le case #newmatch en #newmatchtennis et #newmatchfifa pour éviter l'imbrication infinie du changement de valeurs de #game
             case "#newmatchtennis":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/newmatch.tpl.html", function (template) {
                     currentuser = { "username": localStorage["login"] };
                     $.post(url + "/opponent.php", currentuser, function (opponentList) {
@@ -113,7 +109,7 @@ $(document).ready(function () {
                         $("#game").val("Tennis");
                         // Date et heure mises par défaut
                         $("#date-input-tennis").val(new Date().toISOString().split("T")[0]);
-                        $("#time-input-tennis").val(new Date().toLocaleString().slice(11,16));
+                        $("#time-input-tennis").val(new Date().toLocaleString().slice(11, 16));
                         console.log("heure modifiée");
                         // Changement de case si la valeur de #game change
                         $("#game").on('change', function () {
@@ -189,9 +185,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#newmatchfifa":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/newmatch.tpl.html", function (template) {
                     currentuser = { "username": localStorage["login"] };
                     $.post(url + "/opponent.php", currentuser, function (opponentList) {
@@ -202,7 +196,7 @@ $(document).ready(function () {
                         $("#game").val("FIFA");
                         // Date et heure mises par défaut
                         $("#date-input-fifa").val(new Date().toISOString().split("T")[0]);
-                        $("#time-input-fifa").val(new Date().toLocaleString().slice(11,16));
+                        $("#time-input-fifa").val(new Date().toLocaleString().slice(11, 16));
                         // Changement de case si la valeur de #game change
                         $("#game").on('change', function () {
                             if ($("#game").val() == "Tennis") {
@@ -331,9 +325,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#myresults":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     var template2 = Mustache.render(template, { myFifaResults: {}, myTennisResults: {} });
                     $("#my-content").html(template2);
@@ -350,6 +342,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#my_tennis_results":
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     currentGame = { "game": "tennis", "user": localStorage["login"] };
                     $.post(url + "/myresults.php", currentGame, function (myResults) {
@@ -376,9 +369,7 @@ $(document).ready(function () {
                 }, "html");
                 break;
             case "#my_fifa_results":
-                if (!isConnected()) {
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/myresults.tpl.html", function (template) {
                     currentGame = { "game": "fifa", "user": localStorage["login"] };
                     $.post(url + "/myresults.php", currentGame, function (myResults) {
@@ -486,16 +477,15 @@ $(document).ready(function () {
                 break;
             // Interface home : l'utilisateur y accède après s'être connecté
             case "#home":
-                if (!isConnected()) {
-                    console.log("redirection vers non-connecté");
-                    window.location.href = "index.html#not_connected"
-                }
+                isConnected();
                 $.get("template/home.tpl.html", function (template) {
                     template2 = template.replace("{{login}}", localStorage["login"]);
                     $("#my-content").html(template2);
                     $("#logout-btn").on('click', function () {
                         localStorage["login"] = "";
                         localStorage["access_token"] = "";
+                        console.log("mémoire maj");
+                        window.location.href = "index.html";
                     });
                 }, "html");
                 break;
@@ -514,11 +504,15 @@ $(document).ready(function () {
                 }, "html");
                 break;
             default:
-                // Si un utilisateur est connecté, le default case le redirige vers l'interface home
-                if (isConnected()) {
-                    console.log("redirection vers home");
-                    window.location.href = "index.html#home";
-                }
+                // Redirection vers #home si l'utilisateur est connecté
+                getIfUserIsLogged()
+                    .then((result) => {
+                        if (result) {
+                            window.location.href = "index.html#home";
+                        }
+                    })
+                    .catch((error) => { });
+                // Chargement de index.html    
                 $.get("template/index.tpl.html", function (template) {
                     $("#my-content").html(template);
                 }, "html");
@@ -526,14 +520,42 @@ $(document).ready(function () {
         }
     }
 
+
     function isConnected() {
-        if (localStorage["login"]) {
-            if (localStorage["login"] != "") {
-                return true;
-            }
-        }
-        return false;
+        // ne fait rien si l'utilisateur est connecté, et renvoie vers la page #not-connected sinon
+        getIfUserIsLogged()
+            .then((result) => {
+                if (!result) {
+                    window.location.href = "index.html#not-connected";
+                }
+            })
+            .catch((error) => {
+                window.location.href = "index.html";
+            });
     }
+
+    function getIfUserIsLogged() {
+        // fonction avec un système de promesse qui renvoie si l'utilisateur est connecté ou non
+        return new Promise((resolve, reject) => {
+            if (localStorage["login"] && localStorage["access_token"]) {
+                if (localStorage["login"] != "" && localStorage["access_token"]) {
+                    logData = { "login": localStorage["login"], "access_token": localStorage["access_token"] };
+                    $.post(url + "/logged.php", logData, function (answer) {
+                        if (answer["status"] == "success") {
+                            resolve(true); // L'utilisateur est connecté
+                        } else {
+                            reject("Échec de la connexion");
+                        }
+                    });
+                } else {
+                    reject("Échec de la connexion");
+                }
+            } else {
+                reject("Échec de la connexion");
+            }
+        });
+    }
+
     function isScoreSet(set_winner, set_loser) {
         // Renvoie (cohérence du score, gagnant du set) à partir d'un score au format ("6","0")
         result = true;
