@@ -125,18 +125,3 @@ modal-elo/
 ## Contributing
 
 This project was developed as part of the INF471T course at CSC_41M03_EP. Contributions are welcome! Please feel free to submit issues and pull requests.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## Authors
-
-- Apache Cordova Team (base template)
-- [Your Name] - Custom development
-
-## Acknowledgments
-
-- Elo rating system by Arpad Elo
-- Bootstrap, jQuery, and other open-source libraries used in this project</content>
-<parameter name="filePath">c:\Users\Khalid\Desktop\X\2A\P1\CSC_41M03_EP - Modal - Tablettes et Smartphones\INF471T\workspace\modal-elo\README.md
